@@ -1,0 +1,17 @@
+# PostgreSQL n'est plus utilisé — migration vers SQLite locale.
+# Conservez ce fichier pour référence ou supprimez-le si PostgreSQL n'est plus nécessaire.
+# services:
+#   db:
+#     image: postgres:17-alpine
+#     restart: unless-stopped
+#     environment:
+#       POSTGRES_USER: hms
+#       POSTGRES_PASSWORD: hms
+#       POSTGRES_DB: hms_gs
+#     ports:
+#       - "5432:5432"
+#     volumes:
+#       - hms_pgdata:/var/lib/postgresql/data
+# 
+# volumes:
+#   hms_pgdata:

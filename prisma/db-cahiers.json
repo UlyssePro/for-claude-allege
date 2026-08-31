@@ -1,0 +1,3314 @@
+[
+  {
+    "classe": "1ERE",
+    "matiere": "1ere",
+    "trimestres": [
+      {
+        "numero": 1,
+        "label": "Trimestre 1",
+        "matiere": "1ere",
+        "color": "#7B1FA2",
+        "lessons": [
+          {
+            "numero": 1,
+            "titre": "Architecture Von Neumann",
+            "objectifs": "CPU, RAM, bus, E/S Fetch-decode-execute",
+            "notions": "Milliards instructions/seconde.",
+            "exercice": "Explique le cycle complet. Dessine chemin donnees.",
+            "pratique": "Simuler un processeur simplifie."
+          },
+          {
+            "numero": 2,
+            "titre": "Assembleur",
+            "objectifs": "MOV, ADD, JMP Traduire mini-programme",
+            "notions": "Langage le plus proche machine.",
+            "exercice": "Programme addition 3 nombres en assembleur.",
+            "pratique": "Simulateur MARS/Little Man Computer."
+          },
+          {
+            "numero": 3,
+            "titre": "Memoire",
+            "objectifs": "RAM, ROM, cache L1/L2/L3, HDD, SSD Hierarchie memoire",
+            "notions": "Cache 32Ko ~1ns. RAM 8Go ~100ns. SSD 500Go ~0.1ms.",
+            "exercice": "Mesure vitesse RAM/SSD (benchmark).",
+            "pratique": "Expliquer SSD vs HDD."
+          },
+          {
+            "numero": 4,
+            "titre": "OS : processus",
+            "objectifs": "FIFO, SJF, Round Robin Threads et parallelisme",
+            "notions": "L'OS gere les processus.",
+            "exercice": "Simulateur ordonnanceur 3 algos.",
+            "pratique": "Observer processus gestionnaire taches."
+          },
+          {
+            "numero": 5,
+            "titre": "OS : memoire",
+            "objectifs": "Pagination, memoire virtuelle, swapping Gestion memoire",
+            "notions": "Memoire virtuelle = disque comme RAM.",
+            "exercice": "Explique manque de RAM.",
+            "pratique": "Configurer swap."
+          },
+          {
+            "numero": 6,
+            "titre": "Python async",
+            "objectifs": "asyncio, async/await Taches paralleles",
+            "notions": "Code non bloquant pour E/S.",
+            "exercice": "Scraper web asynchrone.",
+            "pratique": "Comparer threading/multiprocessing/asyncio."
+          },
+          {
+            "numero": 7,
+            "titre": "Decorateurs",
+            "objectifs": "Creer @decorateur @functools.wraps",
+            "notions": "Modifie comportement fonction.",
+            "exercice": "Decorateurs : mesurer temps, logger, verifier droits.",
+            "pratique": "Decorateur de cache (memoisation)."
+          },
+          {
+            "numero": 8,
+            "titre": "Projet architecture",
+            "objectifs": "Simulateur processeur 8-bit Visualiser execution",
+            "notions": "Instructions, registres, RAM.",
+            "exercice": "Code simulateur. Affiche etat CPU chaque cycle.",
+            "pratique": "Executer petit programme sur simulateur."
+          },
+          {
+            "numero": 9,
+            "titre": "Revision et QCM blanc",
+            "objectifs": "Reviser trimestre S'entrainer examen",
+            "notions": "Architecture, OS, assembleur, Python avance.",
+            "exercice": "QCM blanc 30 questions. Correction groupe.",
+            "pratique": "Identifier lacunes."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 1",
+            "description": "Schema Von Neumann + explications. Cycle fetch-decode-execute. Ordonnancement. Memoire virtuelle."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 2",
+            "description": "Decorateur de cache + simulateur ordonnanceur + questions async/concurrence."
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "label": "Trimestre 2",
+        "matiere": "1ere",
+        "color": "#1565C0",
+        "lessons": [
+          {
+            "numero": 10,
+            "titre": "Modele relationnel",
+            "objectifs": "Table, attribut, tuple, cle Algebre relationnelle",
+            "notions": "Fondement de SQL (Codd 1970).",
+            "exercice": "Expressions algebre relationnelle.",
+            "pratique": "Traduire algebre SQL."
+          },
+          {
+            "numero": 11,
+            "titre": "SQL DDL",
+            "objectifs": "CREATE, ALTER, DROP Contraintes PK, FK, UNIQUE, CHECK",
+            "notions": "Definit la structure.",
+            "exercice": "Cree BDD ecole complete (tables, contraintes, index).",
+            "pratique": "Migrer BDD (ajouter colonne)."
+          },
+          {
+            "numero": 12,
+            "titre": "SQL DML approfondi",
+            "objectifs": "INSERT, UPDATE, DELETE complexes Sous-requetes correlees",
+            "notions": "Reference a la requete exterieure.",
+            "exercice": "10 requetes DML sur BDD ecole.",
+            "pratique": "Transferer donnees entre tables."
+          },
+          {
+            "numero": 13,
+            "titre": "SQL JOINs avances",
+            "objectifs": "INNER,LEFT,RIGHT,FULL,CROSS Auto-jointure",
+            "notions": "Chaque type a un usage specifique.",
+            "exercice": "Eleves sans notes (LEFT JOIN). Paires meme classe (auto-join).",
+            "pratique": "Optimiser jointures (index)."
+          },
+          {
+            "numero": 14,
+            "titre": "SQL fenetrage",
+            "objectifs": "ROW_NUMBER,RANK,LAG,LEAD Classements, calculs glissants",
+            "notions": "Calculent sur ensemble de lignes.",
+            "exercice": "Classe eleves par moyenne (RANK). Moyenne glissante.",
+            "pratique": "Rapport progression eleves."
+          },
+          {
+            "numero": 15,
+            "titre": "Procedures et triggers",
+            "objectifs": "Procedure stockee Trigger automatique",
+            "notions": "Code SQL reutilisable.",
+            "exercice": "Procedure calculer_moyennes. Trigger log modifications.",
+            "pratique": "Automatiser maintenance BDD."
+          },
+          {
+            "numero": 16,
+            "titre": "Normalisation",
+            "objectifs": "1NF,2NF,3NF,BCNF Anomalies",
+            "notions": "Eviter redondances.",
+            "exercice": "Normalise base mal concue en 3NF.",
+            "pratique": "Denormaliser pour perf."
+          },
+          {
+            "numero": 17,
+            "titre": "Projet BDD",
+            "objectifs": "Concevoir de A a Z Scripts SQL",
+            "notions": "Cas reel (boutique, hopital...).",
+            "exercice": "MCD, normalisation, SQL, donnees test.",
+            "pratique": "Rapport d'analyse (requetes complexes)."
+          },
+          {
+            "numero": 18,
+            "titre": "Optimisation SQL",
+            "objectifs": "EXPLAIN ANALYZE Creer et verifier les index",
+            "notions": "Index accelerent lectures.",
+            "exercice": "Analyse perfs 5 requetes avec/sans index.",
+            "pratique": "Optimiser requete 10s > 0.01s."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 3",
+            "description": "BDD librairie en ligne (5 tables). 10 requetes complexes (JOINs, sous-requetes, fenetrage, agregation)."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 4",
+            "description": "Concois, normalise, implemente BDD systeme donne + rapport optimisation."
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "label": "Trimestre 3",
+        "matiere": "1ere",
+        "color": "#6A1B9A",
+        "lessons": [
+          {
+            "numero": 19,
+            "titre": "Flask approfondi",
+            "objectifs": "Auth (Flask-Login) Sessions et cookies",
+            "notions": "Inscription, connexion, profil.",
+            "exercice": "Site avec auth complet.",
+            "pratique": "Securiser (hash MDP, CSRF)."
+          },
+          {
+            "numero": 20,
+            "titre": "Front-end moderne",
+            "objectifs": "React/Vue initiation Composants",
+            "notions": "Framework JS pour interfaces riches.",
+            "exercice": "Composant simple React/Vue.",
+            "pratique": "Comparer framework vs vanilla JS."
+          },
+          {
+            "numero": 21,
+            "titre": "Git",
+            "objectifs": "init,add,commit,push,pull Branches et merges",
+            "notions": "Gestion de versions.",
+            "exercice": "Cree depot Git. Branches feature/bugfix. Pull request.",
+            "pratique": "Simuler conflit merge et resoudre."
+          },
+          {
+            "numero": 22,
+            "titre": "IA : reseaux de neurones",
+            "objectifs": "Perceptron Entrainement simple",
+            "notions": "Somme ponderee + activation.",
+            "exercice": "Perceptron sur donnees lineairement separables.",
+            "pratique": "Retropropagation gradient."
+          },
+          {
+            "numero": 23,
+            "titre": "IA : application",
+            "objectifs": "CNN (images) NLP (texte)",
+            "notions": "Reseaux pour images et langage.",
+            "exercice": "Modele pre-entraine classification images.",
+            "pratique": "Chatbot avec regles."
+          },
+          {
+            "numero": 24,
+            "titre": "Droit du numerique",
+            "objectifs": "RGPD, propriete intellectuelle Licences open source",
+            "notions": "Le numerique est encadre par le droit.",
+            "exercice": "Analyse CGU de 3 services. Explique licence projet.",
+            "pratique": "Rediger politique confidentialite."
+          },
+          {
+            "numero": 25,
+            "titre": "Projet final NSI",
+            "objectifs": "Projet d'envergure Jalons et suivi",
+            "notions": "Integrer competences 1ere.",
+            "exercice": "Lance projet. Jalon hebdo.",
+            "pratique": "Revue de code prof."
+          },
+          {
+            "numero": 26,
+            "titre": "Finalisation",
+            "objectifs": "Tests, debug, documentation Preparation soutenance",
+            "notions": "Derniere ligne droite.",
+            "exercice": "Termine, teste, documente.",
+            "pratique": "Répétitions soutenance."
+          },
+          {
+            "numero": 27,
+            "titre": "Bilan 1ere",
+            "objectifs": "Soutenances Perspectives Terminale",
+            "notions": "Competences 1ere completes.",
+            "exercice": "Soutiens ton projet. Grille auto-eval.",
+            "pratique": "Celebration !"
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 5",
+            "description": "Projet NSI complet : code source, documentation, deploiement. Evaluation technique."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 6",
+            "description": "Soutenance 15 min. Ecrit : architecture (Von Neumann, OS), BDD (conception, SQL), Python (code)."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "classe": "2NDE",
+    "matiere": "2nde",
+    "trimestres": [
+      {
+        "numero": 1,
+        "label": "Trimestre 1",
+        "matiere": "2nde",
+        "color": "#7B1FA2",
+        "lessons": [
+          {
+            "numero": 1,
+            "titre": "Environnement",
+            "objectifs": "Installer Python, VS Code Terminal et pip",
+            "notions": "venv = environnement virtuel. pip = gestionnaire paquets.",
+            "exercice": "Installe Python+VS Code. Cree venv. pip install requests.",
+            "pratique": "Configurer son IDE ideal."
+          },
+          {
+            "numero": 2,
+            "titre": "Types et operateurs",
+            "objectifs": "Reviser tous les types //, %, **, and, or, not",
+            "notions": "Revision approfondie.",
+            "exercice": "Analyseur de texte (caracteres, mots, frequences).",
+            "pratique": "Mini-interpreteur maths."
+          },
+          {
+            "numero": 3,
+            "titre": "Fonctions avancees",
+            "objectifs": "*args, **kwargs Type hints (-> int)",
+            "notions": "def f(a:int,b:int)->int. *args=liste params.",
+            "exercice": "Fonctions avec type hints. Moyenne de N notes avec *args.",
+            "pratique": "Docstrings pour tout."
+          },
+          {
+            "numero": 4,
+            "titre": "Modules et packages",
+            "objectifs": "Creer son module Structurer un projet",
+            "notions": "Module=.py. Package=dossier+__init__.py.",
+            "exercice": "Organise projet en modules (main, utils, models).",
+            "pratique": "Mini-framework tests unitaires."
+          },
+          {
+            "numero": 5,
+            "titre": "Exceptions",
+            "objectifs": "try/except/else/finally Exceptions personnalisees",
+            "notions": "else=si pas erreur. finally=toujours.",
+            "exercice": "Validateur robuste avec exceptions.",
+            "pratique": "Logger les erreurs."
+          },
+          {
+            "numero": 6,
+            "titre": "Fichiers CSV/JSON/pickle",
+            "objectifs": "Lire/ecrire formats Parser donnees",
+            "notions": "csv.reader(), json.load(), pickle.load().",
+            "exercice": "Convertisseur CSV->JSON. Gros fichier donnees.",
+            "pratique": "Travailler 10000+ lignes."
+          },
+          {
+            "numero": 7,
+            "titre": "Regex",
+            "objectifs": "module re Patterns email, tel, URL",
+            "notions": "re.search(), re.findall(), re.sub().",
+            "exercice": "Validateur email, tel, URL regex.",
+            "pratique": "Extraire tous les emails d'un texte."
+          },
+          {
+            "numero": 8,
+            "titre": "Programmation fonctionnelle",
+            "objectifs": "map(), filter(), reduce() lambda",
+            "notions": "lambda = fonction anonyme.",
+            "exercice": "Reecris boucles avec map/filter. lambda pour trier.",
+            "pratique": "Comparer imperatif/fonctionnel."
+          },
+          {
+            "numero": 9,
+            "titre": "Tests unitaires",
+            "objectifs": "unittest/pytest TDD (test-driven)",
+            "notions": "Test verifie le comportement.",
+            "exercice": "10 tests unitaires. Pratique TDD.",
+            "pratique": "80% couverture de code."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 1",
+            "description": "Gestionnaire contacts : menu, CRUD, sauvegarde JSON, validation regex, tests, modules."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 2",
+            "description": "QCM 25 questions (types, fonctions, modules, exceptions, fichiers, regex, tests)."
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "label": "Trimestre 2",
+        "matiere": "2nde",
+        "color": "#1565C0",
+        "lessons": [
+          {
+            "numero": 10,
+            "titre": "Listes chainees",
+            "objectifs": "Implementer Node+LinkedList vs listes Python",
+            "notions": "Insertion rapide, acces lent.",
+            "exercice": "Implemente liste chainee.",
+            "pratique": "Comparer perfs vs liste Python."
+          },
+          {
+            "numero": 11,
+            "titre": "Piles et files",
+            "objectifs": "Pile (LIFO) File (FIFO)",
+            "notions": "Pile=dernier entre premier sorti.",
+            "exercice": "Verifie parenthesage (pile). File d'attente (file).",
+            "pratique": "Evaluateur expressions postfixees."
+          },
+          {
+            "numero": 12,
+            "titre": "Arbres binaires",
+            "objectifs": "ABR (gauche Parcours prefixe,infixe,suffixe",
+            "notions": "Structure hierarchique.",
+            "exercice": "Implemente ABR (insertion, recherche, parcours, hauteur).",
+            "pratique": "Arbre expression mathematique."
+          },
+          {
+            "numero": 13,
+            "titre": "Tris avances",
+            "objectifs": "Quicksort et Mergesort O(n log n)",
+            "notions": "Pivot vs division/fusion.",
+            "exercice": "Implemente les 2. Compare perfs 10000 elements.",
+            "pratique": "Visualiser avec matplotlib."
+          },
+          {
+            "numero": 14,
+            "titre": "POO : heritage",
+            "objectifs": "Heritage et polymorphisme super(), @property",
+            "notions": "Specialiser des classes.",
+            "exercice": "Hierarchie Vehicule->Voiture,Moto,Camion.",
+            "pratique": "Refactoriser avec heritage."
+          },
+          {
+            "numero": 15,
+            "titre": "POO : abstrait",
+            "objectifs": "ABC, @abstractmethod Duck typing",
+            "notions": "Classe abstraite = contrat.",
+            "exercice": "Classe abstraite Forme(aire,perimetre). Cercle,Rectangle,Triangle.",
+            "pratique": "Heritage vs duck typing."
+          },
+          {
+            "numero": 16,
+            "titre": "Design patterns",
+            "objectifs": "Singleton, Factory, Observer Patterns classiques",
+            "notions": "Solutions eprouvees.",
+            "exercice": "Implemente les 3 patterns.",
+            "pratique": "Identifier 5 patterns dans du code."
+          },
+          {
+            "numero": 17,
+            "titre": "Projet intermediaire",
+            "objectifs": "Architecture complexe POO + SDD",
+            "notions": "Gestionnaire bibliotheque avec ABR.",
+            "exercice": "Planifie (diagramme classes). Code.",
+            "pratique": "Code review mi-parcours."
+          },
+          {
+            "numero": 18,
+            "titre": "Profiling",
+            "objectifs": "cProfile, timeit Identifier les goulets",
+            "notions": "Mesurer ou le code passe son temps.",
+            "exercice": "Profile ton programme. Optimise la fonction lente.",
+            "pratique": "Benchmark avant/apres."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 3",
+            "description": "Implemente ABR + Quicksort + Pile. Explique complexite de chaque operation."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 4",
+            "description": "Mini-jeu (Puissance 4) avec POO : Piece, Plateau, Joueur, Jeu. Sauvegarde/Restauration."
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "label": "Trimestre 3",
+        "matiere": "2nde",
+        "color": "#6A1B9A",
+        "lessons": [
+          {
+            "numero": 19,
+            "titre": "SQL approfondi",
+            "objectifs": "Sous-requetes, vues, index Transactions, isolation",
+            "notions": "Index = accelere les recherches.",
+            "exercice": "BDD scolaire avec vues et index. Mesure impact index.",
+            "pratique": "Optimiser requetes lentes (EXPLAIN)."
+          },
+          {
+            "numero": 20,
+            "titre": "Python + PostgreSQL",
+            "objectifs": "psycopg2 ORM simple",
+            "notions": "Interaction BDD depuis Python.",
+            "exercice": "Cree ORM simple (Model.save,find,all).",
+            "pratique": "Comparer SQL brut vs SQLAlchemy."
+          },
+          {
+            "numero": 21,
+            "titre": "Flask initiation",
+            "objectifs": "@app.route('/') Templates Jinja2",
+            "notions": "Micro-framework web.",
+            "exercice": "Blog simple : articles, categories.",
+            "pratique": "Deployer PythonAnywhere."
+          },
+          {
+            "numero": 22,
+            "titre": "API REST",
+            "objectifs": "GET, POST, PUT, DELETE Tester Postman/curl",
+            "notions": "API = interface HTTP.",
+            "exercice": "Transforme blog en API REST. Test avec requests.",
+            "pratique": "Documenter Swagger/OpenAPI."
+          },
+          {
+            "numero": 23,
+            "titre": "IA et ML",
+            "objectifs": "IA, ML, Deep Learning Apprentissage supervise",
+            "notions": "IA=domaine. ML=machine apprend. DL=reseaux profonds.",
+            "exercice": "Classification Iris avec scikit-learn.",
+            "pratique": "Matrice de confusion."
+          },
+          {
+            "numero": 24,
+            "titre": "Data science",
+            "objectifs": "pandas DataFrame matplotlib/seaborn",
+            "notions": "Analyse de donnees tabulaires.",
+            "exercice": "Analyse dataset (titanic, happiness). Nettoie, stats, visualise.",
+            "pratique": "Rapport d'analyse."
+          },
+          {
+            "numero": 25,
+            "titre": "Projet final 2nde",
+            "objectifs": "Flask+BDD ou analyse donnees Jalons hebdomadaires",
+            "notions": "Projet ambitieux.",
+            "exercice": "Lance ton projet. Jalon hebdo.",
+            "pratique": "Tests et documentation."
+          },
+          {
+            "numero": 26,
+            "titre": "Deploiement",
+            "objectifs": "Mettre en ligne README complet",
+            "notions": "Description, installation, usage, screenshots.",
+            "exercice": "Deploie ton projet. Redige README.",
+            "pratique": "Tests utilisateurs reels."
+          },
+          {
+            "numero": 27,
+            "titre": "Bilan 2nde",
+            "objectifs": "Soutenance 10 min Choix specialite",
+            "notions": "Competences 2nde completes.",
+            "exercice": "Soutiens ton projet. Grille auto-eval.",
+            "pratique": "Celebration !"
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 5",
+            "description": "Projet Flask+BDD ou analyse donnees ou app Python. Documentation + deploiement."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 6",
+            "description": "Soutenance 10 min + 5 min questions. Qualite technique, presentation, documentation."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "classe": "3E",
+    "matiere": "3e",
+    "trimestres": [
+      {
+        "numero": 1,
+        "label": "Trimestre 1",
+        "matiere": "3e",
+        "color": "#E65100",
+        "lessons": [
+          {
+            "numero": 1,
+            "titre": "Architecture reseau",
+            "objectifs": "LAN, switch, routeur Schema reseau",
+            "notions": "Reseau local connecte les appareils proches.",
+            "exercice": "Dessine le reseau de ton etablissement.",
+            "pratique": "Inventaire equipements reseau."
+          },
+          {
+            "numero": 2,
+            "titre": "Adressage IP",
+            "objectifs": "IPv4 Publique vs privee",
+            "notions": "4 nombres 0-255. Publique = unique Internet.",
+            "exercice": "Trouve ton IP privee (ipconfig) et publique.",
+            "pratique": "Simuler sous-reseau."
+          },
+          {
+            "numero": 3,
+            "titre": "DNS et HTTP",
+            "objectifs": "nslookup En-tetes HTTP",
+            "notions": "DNS = annuaire. HTTP = protocole transfert.",
+            "exercice": "nslookup 3 domaines. Analyse en-tetes HTTP outils dev.",
+            "pratique": "Comparer en-tetes de 3 sites."
+          },
+          {
+            "numero": 4,
+            "titre": "Modele OSI/TCP-IP",
+            "objectifs": "7 couches OSI Encapsulation",
+            "notions": "OSI = theorique. TCP/IP = pratique.",
+            "exercice": "Dessine les 2 modeles. Associe IP,HTTP,Ethernet.",
+            "pratique": "Demo Wireshark."
+          },
+          {
+            "numero": 5,
+            "titre": "Securite reseau",
+            "objectifs": "Pare-feu, TLS/SSL Certificat (cadenas)",
+            "notions": "Chiffrement = donnees illisibles.",
+            "exercice": "Analyse certificat google.com.",
+            "pratique": "Comparer HTTP vs HTTPS."
+          },
+          {
+            "numero": 6,
+            "titre": "Systemes d'exploitation",
+            "objectifs": "Windows, macOS, Linux Role du noyau",
+            "notions": "OS gere materiel, fichiers, processus.",
+            "exercice": "Installe Ubuntu en VM (VirtualBox).",
+            "pratique": "Comparer les 3 OS."
+          },
+          {
+            "numero": 7,
+            "titre": "Terminal",
+            "objectifs": "ls/dir, cd, mkdir Scripts .bat/.sh",
+            "notions": "Le terminal automatise.",
+            "exercice": "Cree arborescence via terminal. Fichier texte via commande.",
+            "pratique": "Script automatisation."
+          },
+          {
+            "numero": 8,
+            "titre": "Virtualisation et Cloud",
+            "objectifs": "VM = ordi dans ordi IaaS, PaaS, SaaS",
+            "notions": "Virtualisation simule. Cloud = serveurs distants.",
+            "exercice": "Cree une VM simple. Difference Cloud vs local.",
+            "pratique": "Comparer AWS, Google Cloud, Azure."
+          },
+          {
+            "numero": 9,
+            "titre": "Revision trimestre",
+            "objectifs": "Reseaux, OS, securite, terminal Pratique",
+            "notions": "Revision complete.",
+            "exercice": "Exercices combines : config mini-reseau virtuel.",
+            "pratique": "QCM blanc entrainement."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 1",
+            "description": "Reseau 5 postes, switch, routeur + explique DNS+HTTP + QCM 20 questions."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 2",
+            "description": "Installe Linux en VM. Cree arborescence terminal. Explique virtualisation et Cloud."
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "label": "Trimestre 2",
+        "matiere": "3e",
+        "color": "#1565C0",
+        "lessons": [
+          {
+            "numero": 10,
+            "titre": "Python : revision intensive",
+            "objectifs": "Types,conditions,boucles,fonctions PEP 8",
+            "notions": "Revision base + qualite code.",
+            "exercice": "Convertisseur propre et commente.",
+            "pratique": "10 exos France-IOI."
+          },
+          {
+            "numero": 11,
+            "titre": "Structures de donnees",
+            "objectifs": "list, tuple, dict, set Choisir la bonne",
+            "notions": "Tuple=immuable. Set=sans doublon.",
+            "exercice": "Programme utilisant les 4 types.",
+            "pratique": "Comparer performances."
+          },
+          {
+            "numero": 12,
+            "titre": "POO",
+            "objectifs": "class MaClasse: Instancier des objets",
+            "notions": "class Eleve: def __init__(self,nom).",
+            "exercice": "Classe Livre et Bibliotheque avec methodes.",
+            "pratique": "Refactoriser en POO."
+          },
+          {
+            "numero": 13,
+            "titre": "JSON",
+            "objectifs": "json.load/dump Stocker des donnees",
+            "notions": "Format texte structure.",
+            "exercice": "Gestionnaire contacts avec sauvegarde JSON.",
+            "pratique": "Migrer CSV > JSON."
+          },
+          {
+            "numero": 14,
+            "titre": "Recursivite",
+            "objectifs": "Fonction qui s'appelle Cas de base",
+            "notions": "Factorielle recursive. Fibonacci recursif/iteratif.",
+            "exercice": "Code factorielle et Fibonacci.",
+            "pratique": "Comparer recursif vs iteratif."
+          },
+          {
+            "numero": 15,
+            "titre": "Programmation dynamique",
+            "objectifs": "Memoisation Probleme du sac a dos",
+            "notions": "Stocker resultats pour eviter recalculs.",
+            "exercice": "Resous le sac a dos par PD.",
+            "pratique": "Optimiser Fibonacci avec memoisation."
+          },
+          {
+            "numero": 16,
+            "titre": "Graphes",
+            "objectifs": "Noeuds + aretes BFS (parcours largeur)",
+            "notions": "Modelise metro, cartes, reseaux.",
+            "exercice": "Modelise metro de ta ville. Chemin le plus court (BFS).",
+            "pratique": "Implementer DFS."
+          },
+          {
+            "numero": 17,
+            "titre": "APIs",
+            "objectifs": "requests.get(url) Parser JSON",
+            "notions": "API = service web interrogeable.",
+            "exercice": "API restcountries.com : infos pays.",
+            "pratique": "Dashboard multi-APIs."
+          },
+          {
+            "numero": 18,
+            "titre": "Projet Python intermediaire",
+            "objectifs": "Ambitieux Architecture modulaire",
+            "notions": "Jeu (echecs, snake) ou utilitaire.",
+            "exercice": "Planifie (diagramme classes). Commence le code.",
+            "pratique": "Point d'avancement hebdo."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 3",
+            "description": "Classe Banque avec Comptes (depot, retrait, virement). Recursif (factorielle). Consomme API REST."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 4",
+            "description": "Explique recursif vs iteratif. Probleme de graphe. Programmation dynamique."
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "label": "Trimestre 3",
+        "matiere": "3e",
+        "color": "#6A1B9A",
+        "lessons": [
+          {
+            "numero": 19,
+            "titre": "BDD : conception",
+            "objectifs": "MCD (Modele Conceptuel) Normalisation 1NF,2NF,3NF",
+            "notions": "MCD = entites et relations.",
+            "exercice": "Concois le MCD de ton etablissement.",
+            "pratique": "Normaliser une base non normalisee."
+          },
+          {
+            "numero": 20,
+            "titre": "SQL avance",
+            "objectifs": "Sous-requetes, HAVING, vues Transactions",
+            "notions": "Sous-requete = requete dans requete.",
+            "exercice": "Eleves avec moyenne > moyenne generale (sous-requete).",
+            "pratique": "Creer une vue."
+          },
+          {
+            "numero": 21,
+            "titre": "Python + SQLite",
+            "objectifs": "Connecter Python a BDD Application complete",
+            "notions": "Module sqlite3.",
+            "exercice": "App gestion bibliotheque Python+SQLite.",
+            "pratique": "Interface web Flask."
+          },
+          {
+            "numero": 22,
+            "titre": "Histoire de l'informatique",
+            "objectifs": "Turing, ENIAC, microprocesseur Grandes dates",
+            "notions": "1940s a aujourd'hui.",
+            "exercice": "Frise chronologique illustree.",
+            "pratique": "Expose sur un pionnier."
+          },
+          {
+            "numero": 23,
+            "titre": "Ethique numerique",
+            "objectifs": "RGPD, cookies Droit a l'oubli",
+            "notions": "Le RGPD protege nos donnees.",
+            "exercice": "Analyse cookies de 5 sites. Lis politique confidentialite.",
+            "pratique": "Debat : reconnaissance faciale ?"
+          },
+          {
+            "numero": 24,
+            "titre": "Projet final 3e",
+            "objectifs": "Ambitieux Jalons hebdomadaires",
+            "notions": "Integre competences de l'annee.",
+            "exercice": "Lance ton projet. Jalon hebdo.",
+            "pratique": "Journal de bord."
+          },
+          {
+            "numero": 25,
+            "titre": "Code review",
+            "objectifs": "Relecture par les pairs Corriger et optimiser",
+            "notions": "Ameliore la qualite.",
+            "exercice": "Echange avec 2 camarades. Integre retours.",
+            "pratique": "Revue formelle prof."
+          },
+          {
+            "numero": 26,
+            "titre": "Preparer la soutenance",
+            "objectifs": "Support de presentation Répéter la demo",
+            "notions": "10 min presentation + 5 min questions.",
+            "exercice": "Prepare et repete.",
+            "pratique": "Filmer et s'auto-evaluer."
+          },
+          {
+            "numero": 27,
+            "titre": "Bilan 3e et orientation",
+            "objectifs": "Auto-evaluation Choisir specialite lycee",
+            "notions": "Competences 3e completes.",
+            "exercice": "Grille + lettre motivation NSI.",
+            "pratique": "Soutenances finales !"
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 5",
+            "description": "Projet Python+BDD ou Web complet. Code source, documentation, soutenance."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 6",
+            "description": "Soutenance 10 min + 5 min questions. Evaluee technique, presentation, documentation."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "classe": "4E",
+    "matiere": "4e",
+    "trimestres": [
+      {
+        "numero": 1,
+        "label": "Trimestre 1",
+        "matiere": "4e",
+        "color": "#E65100",
+        "lessons": [
+          {
+            "numero": 1,
+            "titre": "HTML5 semantique",
+            "objectifs": "header,nav,main,section,article,footer SEO",
+            "notions": "Balises qui decrivent le sens du contenu.",
+            "exercice": "Page avec header, nav, main(2sections+article), aside, footer.",
+            "pratique": "Analyser le code source d'un site connu."
+          },
+          {
+            "numero": 2,
+            "titre": "CSS Flexbox",
+            "objectifs": "display:flex,justify-content,align-items Mise en page flexible",
+            "notions": "Flexbox gere l'alignement 1 axe.",
+            "exercice": "Barre de navigation responsive avec Flexbox.",
+            "pratique": "Galerie de 6 cartes."
+          },
+          {
+            "numero": 3,
+            "titre": "CSS Grid",
+            "objectifs": "display:grid,grid-template-columns Grilles 2D",
+            "notions": "Grid gere 2 axes. repeat(3,1fr) = 3 colonnes.",
+            "exercice": "Grille 3 colonnes, responsive.",
+            "pratique": "Mise en page journal."
+          },
+          {
+            "numero": 4,
+            "titre": "CSS variables et themes",
+            "objectifs": ":root {--couleur:...} Mode sombre",
+            "notions": "Variables evitent de repeter.",
+            "exercice": "Bouton mode sombre changeant les couleurs.",
+            "pratique": "3 themes de couleurs."
+          },
+          {
+            "numero": 5,
+            "titre": "CSS animations",
+            "objectifs": "transition, @keyframes Animer des elements",
+            "notions": "transition = changement fluide. @keyframes = complexe.",
+            "exercice": "Transitions au survol. Loader anime.",
+            "pratique": "Animations au scroll."
+          },
+          {
+            "numero": 6,
+            "titre": "HTML formulaires",
+            "objectifs": "input,textarea,select,button Validation HTML5",
+            "notions": "Formulaires collectent des donnees. required, type=email.",
+            "exercice": "Formulaire de contact complet.",
+            "pratique": "Styliser le formulaire."
+          },
+          {
+            "numero": 7,
+            "titre": "Projet : page d'accueil",
+            "objectifs": "Maquette > Code Flexbox+Grid",
+            "notions": "On part d'un dessin et on code.",
+            "exercice": "Dessine maquette sur papier. Code-la.",
+            "pratique": "Comparer maquette/resultat."
+          },
+          {
+            "numero": 8,
+            "titre": "Accessibilite web",
+            "objectifs": "alt, aria-label, contraste Navigation clavier",
+            "notions": "Web accessible a tous.",
+            "exercice": "Verifie contrastes, alt, navigation clavier.",
+            "pratique": "Outil WAVE/Lighthouse."
+          },
+          {
+            "numero": 9,
+            "titre": "Hebergement (GitHub Pages)",
+            "objectifs": "Mettre en ligne Partager son site",
+            "notions": "GitHub Pages = gratuit pour sites statiques.",
+            "exercice": "Publie ton site. Partage le lien.",
+            "pratique": "Ajouter nom de domaine personnalise."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 1",
+            "description": "Page complete : header,nav,main(Grid),aside,footer. Flexbox+Grid+CSS variables+formulaire+responsive+GitHub Pages."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 2",
+            "description": "QCM 15 questions HTML5, CSS (Flexbox, Grid, selecteurs, animations), accessibilite."
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "label": "Trimestre 2",
+        "matiere": "4e",
+        "color": "#1565C0",
+        "lessons": [
+          {
+            "numero": 10,
+            "titre": "Complexite algorithmique",
+            "objectifs": "Compter les operations O(n), O(n^2), O(log n)",
+            "notions": "Mesure l'efficacite.",
+            "exercice": "Compare insertion O(n^2) et fusion O(n log n).",
+            "pratique": "Implementer tri a bulles et mesurer."
+          },
+          {
+            "numero": 11,
+            "titre": "Python : conditions avancees",
+            "objectifs": "elif imbriques Operateur ternaire",
+            "notions": "x if cond else y = compact.",
+            "exercice": "Convertisseur notes en mentions avec elif.",
+            "pratique": "Simulateur feu tricolore."
+          },
+          {
+            "numero": 12,
+            "titre": "Python : boucles avancees",
+            "objectifs": "break, continue Boucler sur dict",
+            "notions": "break sort. continue passe. for k,v in dict.items().",
+            "exercice": "Cherche element avec break.",
+            "pratique": "Jeu du pendu."
+          },
+          {
+            "numero": 13,
+            "titre": "Python : manipulation fichiers",
+            "objectifs": "Lire/ecrire CSV Parser des donnees",
+            "notions": "Module csv.",
+            "exercice": "Lis CSV de notes, affiche moyenne par eleve.",
+            "pratique": "Export BDD > CSV."
+          },
+          {
+            "numero": 14,
+            "titre": "Python : modules",
+            "objectifs": "import random,datetime,math Bibliotheque standard",
+            "notions": "random.randint(), datetime.now(), math.sqrt().",
+            "exercice": "Jeu de de, calcul age, calculatrice scientifique.",
+            "pratique": "Explorer la bibliotheque standard."
+          },
+          {
+            "numero": 15,
+            "titre": "Python : try/except",
+            "objectifs": "Gerer les erreurs Entrees invalides",
+            "notions": "Empeche le plantage.",
+            "exercice": "Ajoute try/except au programme de notes.",
+            "pratique": "Rendre tous ses programmes robustes."
+          },
+          {
+            "numero": 16,
+            "titre": "Cryptographie",
+            "objectifs": "Chiffrement Cesar Implementer en Python",
+            "notions": "Decaler chaque lettre de N positions.",
+            "exercice": "Programme chiffrement/dechiffrement Cesar.",
+            "pratique": "Cracker par force brute."
+          },
+          {
+            "numero": 17,
+            "titre": "Projet : jeu textuel",
+            "objectifs": "Aventure en Python Fonctions, dicts, fichiers",
+            "notions": "Pieces, objets, enigmes. Commandes texte.",
+            "exercice": "Jeu 5 pieces avec objets et enigmes. Sauvegarde.",
+            "pratique": "Evenements aleatoires."
+          },
+          {
+            "numero": 18,
+            "titre": "Revue de code",
+            "objectifs": "Lire et ameliorer Bonnes pratiques",
+            "notions": "Code lisible, commente, fonctions courtes.",
+            "exercice": "Echange avec camarade. 3 points forts + 3 ameliorations.",
+            "pratique": "Refactoriser avec les retours."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 3",
+            "description": "Explique O(n) vs O(n^2). Code gestionnaire contacts avec menu, CSV, try/except."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 4",
+            "description": "Implemente chiffrement Vigenere en Python. Explique pourquoi plus resistant que Cesar."
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "label": "Trimestre 3",
+        "matiere": "4e",
+        "color": "#6A1B9A",
+        "lessons": [
+          {
+            "numero": 19,
+            "titre": "JavaScript : introduction",
+            "objectifs": "Premiers pas Manipuler le DOM",
+            "notions": "JS rend les pages interactives. document.getElementById().",
+            "exercice": "Bouton qui change le texte.",
+            "pratique": "Compteur de clics."
+          },
+          {
+            "numero": 20,
+            "titre": "JavaScript : evenements",
+            "objectifs": "click, keydown, submit Modifier le style",
+            "notions": "addEventListener ecoute les actions.",
+            "exercice": "Formulaire affichant les donnees sans recharger.",
+            "pratique": "Calculatrice web."
+          },
+          {
+            "numero": 21,
+            "titre": "JavaScript : logique",
+            "objectifs": "if/else, for, while en JS Tableaux",
+            "notions": "Syntaxe proche de Python avec accolades.",
+            "exercice": "Jeu 'Devine le nombre' en JS.",
+            "pratique": "Quiz interactif 5 questions."
+          },
+          {
+            "numero": 22,
+            "titre": "Projet web complet",
+            "objectifs": "HTML+CSS+JS 3 technologies integrees",
+            "notions": "Site moderne = structure + style + interactivite.",
+            "exercice": "Planifie et code site interactif.",
+            "pratique": "Tests utilisateurs (3 personnes)."
+          },
+          {
+            "numero": 23,
+            "titre": "Veille technologique",
+            "objectifs": "Se tenir informe Sources fiables",
+            "notions": "Blogs, newsletters, YouTube educatif.",
+            "exercice": "Trouve 3 sources. Resume un article recent.",
+            "pratique": "Mini-presentation techno recente."
+          },
+          {
+            "numero": 24,
+            "titre": "Projet final 4e",
+            "objectifs": "HTML+CSS+JS ou Python Documenter et presenter",
+            "notions": "Au choix.",
+            "exercice": "Realise ton projet. Redige README.",
+            "pratique": "Répétition presentation."
+          },
+          {
+            "numero": 25,
+            "titre": "Finalisation",
+            "objectifs": "Debug et amelioration Demo",
+            "notions": "Derniere ligne droite.",
+            "exercice": "Termine ton projet. Checklist.",
+            "pratique": "Video demo 2 min."
+          },
+          {
+            "numero": 26,
+            "titre": "Presentations",
+            "objectifs": "5 min + 2 min questions Expliquer ses choix",
+            "notions": "Presente ton projet !",
+            "exercice": "Presente et reponds aux questions.",
+            "pratique": "Vote creatif et technique."
+          },
+          {
+            "numero": 27,
+            "titre": "Bilan 4e",
+            "objectifs": "Auto-evaluation Preparer la 3e",
+            "notions": "Competences 4e completes.",
+            "exercice": "Grille d'auto-eval. Note objectifs 3e.",
+            "pratique": "Celebration !"
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 5",
+            "description": "Projet web (HTML+CSS+JS) ou Python + documentation. Presentation 5 min."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 6",
+            "description": "QCM 20 questions (HTML/CSS, JS, Python, algo, crypto, culture numerique)."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "classe": "5E",
+    "matiere": "5e",
+    "trimestres": [
+      {
+        "numero": 1,
+        "label": "Trimestre 1",
+        "matiere": "5e",
+        "color": "#E65100",
+        "lessons": [
+          {
+            "numero": 1,
+            "titre": "Scratch : jeux complexes",
+            "objectifs": "Morpion, Puissance 4 Strategie",
+            "notions": "Jeu ou le joueur doit reflechir.",
+            "exercice": "Cree un Morpion a 2 joueurs dans Scratch.",
+            "pratique": "IA simple (jouer aleatoire)."
+          },
+          {
+            "numero": 2,
+            "titre": "Python : introduction",
+            "objectifs": "Installer Python/replit.com Scratch vs Python",
+            "notions": "Python = langage textuel, plus puissant, utilise par les pros.",
+            "exercice": "print('Bonjour') et execute.",
+            "pratique": "Comparer meme programme Scratch/Python."
+          },
+          {
+            "numero": 3,
+            "titre": "Python : variables",
+            "objectifs": "int, float, str, bool Pas de declaration",
+            "notions": "nom='Marie', age=14, note=15.5.",
+            "exercice": "Cree variables prenom, age, ville et affiche-les.",
+            "pratique": "Calculer l'age depuis annee de naissance."
+          },
+          {
+            "numero": 4,
+            "titre": "Python : input/print",
+            "objectifs": "input() lit le clavier Conversion int() float()",
+            "notions": "input() retourne toujours du texte. Convertir pour calculer.",
+            "exercice": "Programme prenom+age : 'Bonjour X, tu as Y ans'.",
+            "pratique": "Mini-chatbot 3 reponses."
+          },
+          {
+            "numero": 5,
+            "titre": "Python : conditions",
+            "objectifs": "if, elif, else ==, !=, , =",
+            "notions": "L'indentation est cruciale !",
+            "exercice": "Affiche Enfant/Ado/Adulte selon l'age.",
+            "pratique": "Jeu 'Devine le nombre' (1-100)."
+          },
+          {
+            "numero": 6,
+            "titre": "Python : boucles",
+            "objectifs": "for i in range(n) while condition",
+            "notions": "for = repeter n fois. while = tant que.",
+            "exercice": "Affiche 1 a 20 avec for et while.",
+            "pratique": "Table de multiplication de 7."
+          },
+          {
+            "numero": 7,
+            "titre": "Python : listes",
+            "objectifs": "[] , append(), pop() Parcourir",
+            "notions": "liste = [1,2,3]. for element in liste.",
+            "exercice": "Cree liste de 5 fruits. Ajoute, supprime, trie.",
+            "pratique": "Gestionnaire de liste de courses."
+          },
+          {
+            "numero": 8,
+            "titre": "Python : fonctions",
+            "objectifs": "def f(x): return x Parametres et return",
+            "notions": "Bloc de code reutilisable.",
+            "exercice": "Fonction calculer_moyenne(notes) qui retourne la moyenne.",
+            "pratique": "Mini-calculatrice (4 operations)."
+          },
+          {
+            "numero": 9,
+            "titre": "Python : chaines",
+            "objectifs": "upper(), lower(), split() f-strings",
+            "notions": "f'Bonjour {{nom}}' insere la variable.",
+            "exercice": "Prenom en majuscules : 'BONJOUR X, 5 lettres'.",
+            "pratique": "Generateur de mot de passe."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 1",
+            "description": "Programme : 3 notes > moyenne > Admis/Refuse. Fonction est_pair(). Boucle 10 premiers pairs."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 2",
+            "description": "QCM 15 questions Python + Scratch (comparaison)."
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "label": "Trimestre 2",
+        "matiere": "5e",
+        "color": "#1565C0",
+        "lessons": [
+          {
+            "numero": 10,
+            "titre": "Bases de donnees",
+            "objectifs": "Table, ligne, colonne Cle primaire, etrangere",
+            "notions": "BDD = donnees organisees. Table = comme un tableau.",
+            "exercice": "Modelise BDD Bibliotheque : Livres, Emprunts.",
+            "pratique": "Modeliser un site e-commerce."
+          },
+          {
+            "numero": 11,
+            "titre": "SQL : SELECT/WHERE",
+            "objectifs": "SELECT * FROM table WHERE condition",
+            "notions": "SQL = langage des BDD.",
+            "exercice": "Ecris : tous les livres, livres apres 2010, livres d'un auteur.",
+            "pratique": "Tester dans SQLiteOnline."
+          },
+          {
+            "numero": 12,
+            "titre": "SQL : ORDER BY/LIMIT",
+            "objectifs": "Trier ASC/DESC Limiter le nombre",
+            "notions": "ORDER BY colonne. LIMIT n.",
+            "exercice": "Livres tries par titre. 5 plus recents.",
+            "pratique": "Top 10 des meilleurs livres."
+          },
+          {
+            "numero": 13,
+            "titre": "SQL : agregation",
+            "objectifs": "COUNT, SUM, AVG, MAX, MIN GROUP BY",
+            "notions": "Fonctions de groupe.",
+            "exercice": "Livres par auteur, annee moyenne, auteur le plus prolifique.",
+            "pratique": "Analyser donnees de la classe."
+          },
+          {
+            "numero": 14,
+            "titre": "SQL : JOIN",
+            "objectifs": "JOIN table2 ON condition INNER JOIN",
+            "notions": "Combine les donnees de 2 tables.",
+            "exercice": "Livres avec nom de l'emprunteur.",
+            "pratique": "Rapport complet (qui a emprunte quoi)."
+          },
+          {
+            "numero": 15,
+            "titre": "HTML/CSS : revision",
+            "objectifs": "Reviser 6e Site 5 pages",
+            "notions": "Application a un projet plus grand.",
+            "exercice": "Site 5 pages sur un sujet scolaire. CSS partage.",
+            "pratique": "Formulaire de contact."
+          },
+          {
+            "numero": 16,
+            "titre": "CSS responsive",
+            "objectifs": "@media (max-width) Adapter au mobile",
+            "notions": "Media queries = styles selon la taille d'ecran.",
+            "exercice": "Rends ton site responsive.",
+            "pratique": "Tester sur 3 tailles d'ecran."
+          },
+          {
+            "numero": 17,
+            "titre": "Projet BDD+web",
+            "objectifs": "Site affichant des donnees BDD Planifier",
+            "notions": "Ex : catalogue de livres avec recherche.",
+            "exercice": "Planifie ton projet. Commence.",
+            "pratique": "Point d'etape professeur."
+          },
+          {
+            "numero": 18,
+            "titre": "Presentation mi-parcours",
+            "objectifs": "Presenter l'etat du projet Recevoir des feedbacks",
+            "notions": "1 point fort, 1 a ameliorer, 1 suggestion.",
+            "exercice": "Presente 3 min. Note les retours.",
+            "pratique": "Ameliorer avec les retours."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 3",
+            "description": "5 requetes SQL : SELECT+WHERE, ORDER BY, GROUP BY, JOIN, agregation."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 4",
+            "description": "Mini-site 3 pages presentant les donnees d'une BDD (2 tables liees)."
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "label": "Trimestre 3",
+        "matiere": "5e",
+        "color": "#6A1B9A",
+        "lessons": [
+          {
+            "numero": 19,
+            "titre": "Reseaux : client-serveur",
+            "objectifs": "Navigateur = client Requete HTTP",
+            "notions": "Client envoie requete, serveur repond.",
+            "exercice": "Dessine le parcours : clic > DNS > IP > HTTP > serveur > page.",
+            "pratique": "Trace DNS avec nslookup."
+          },
+          {
+            "numero": 20,
+            "titre": "Reseaux : protocoles",
+            "objectifs": "HTTP, HTTPS, FTP, SMTP TCP/IP",
+            "notions": "Chaque protocole a un role et un port.",
+            "exercice": "Cherche port de HTTP(80), HTTPS(443), SMTP(25), FTP(21).",
+            "pratique": "Analyser trafic reseau outils dev."
+          },
+          {
+            "numero": 21,
+            "titre": "IP et DNS",
+            "objectifs": "Adresse IP ping, nslookup",
+            "notions": "IP = adresse unique. DNS = annuaire.",
+            "exercice": "ping google.com et nslookup wikipedia.org.",
+            "pratique": "tracert google.com (nombre de sauts)."
+          },
+          {
+            "numero": 22,
+            "titre": "Securite reseau",
+            "objectifs": "Pare-feu, antivirus Menaces (virus, malware)",
+            "notions": "Pare-feu = filtre. Antivirus = detecte.",
+            "exercice": "Liste 5 menaces + protection. Verifie ton antivirus.",
+            "pratique": "Affiche '10 commandements securite'."
+          },
+          {
+            "numero": 23,
+            "titre": "Python : dictionnaires",
+            "objectifs": "{} paires cle:valeur Acceder, ajouter, supprimer",
+            "notions": "eleve = {'nom':'Diallo','age':15}.",
+            "exercice": "Cree dict 3 pays (capitale, pop, langue).",
+            "pratique": "Traducteur Fr > En simple."
+          },
+          {
+            "numero": 24,
+            "titre": "Python : fichiers",
+            "objectifs": "with open() read/write Sauvegarder des donnees",
+            "notions": "'r'=lire, 'w'=ecrire, 'a'=ajouter.",
+            "exercice": "Sauvegarde liste de courses dans fichier, relis.",
+            "pratique": "Journal de bord qui s'ajoute."
+          },
+          {
+            "numero": 25,
+            "titre": "Python : projet console",
+            "objectifs": "Menu interactif while True: boucle",
+            "notions": "1. Option A, 2. Option B, 3. Quitter.",
+            "exercice": "Gestionnaire contacts (ajouter, afficher, rechercher, quitter).",
+            "pratique": "Ajout modification et suppression."
+          },
+          {
+            "numero": 26,
+            "titre": "Projet final 5e",
+            "objectifs": "Application Python complete Menu + dicts/fichiers",
+            "notions": "Projet : gestionnaire au choix.",
+            "exercice": "Code ton projet final.",
+            "pratique": "Tests et debug."
+          },
+          {
+            "numero": 27,
+            "titre": "Bilan 5e",
+            "objectifs": "Auto-evaluation Competences acquises",
+            "notions": "Python (variables..fichiers), SQL, reseaux, HTML/CSS.",
+            "exercice": "Complete la grille. Presente ton projet.",
+            "pratique": "Exposition !"
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 5",
+            "description": "Programme Python : menu interactif, gestion donnees, sauvegarde fichier, 3+ fonctionnalites."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 6",
+            "description": "QCM 20 questions (Python, SQL, reseaux, HTML/CSS) + exercice SQL papier."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "classe": "6E",
+    "matiere": "6e",
+    "trimestres": [
+      {
+        "numero": 1,
+        "label": "Trimestre 1",
+        "matiere": "6e",
+        "color": "#E65100",
+        "lessons": [
+          {
+            "numero": 1,
+            "titre": "Revision Scratch",
+            "objectifs": "Interface, blocs base Programme simple 5 min",
+            "notions": "Reviser mouvement, apparence, son, evenements.",
+            "exercice": "Sprite fait le tour de la scene en disant Bonjour.",
+            "pratique": "Refaire tous les exos CM2."
+          },
+          {
+            "numero": 2,
+            "titre": "Conditions avancees",
+            "objectifs": "Si/sinon imbriquees 'et'/'ou'",
+            "notions": "Condition dans condition. 'et'/'ou' combinent.",
+            "exercice": "Si fleche ET souris ALORS couleur SINON avancer.",
+            "pratique": "Chatbot simple dans Scratch."
+          },
+          {
+            "numero": 3,
+            "titre": "Operateurs",
+            "objectifs": "=, , et, ou, non Comparer des valeurs",
+            "notions": "Blocs verts = comparateurs.",
+            "exercice": "Verificateur de mot de passe.",
+            "pratique": "Test de maths interactif."
+          },
+          {
+            "numero": 4,
+            "titre": "Listes",
+            "objectifs": "Creer et manipuler Ajouter, supprimer, lire",
+            "notions": "Stocke plusieurs valeurs.",
+            "exercice": "Liste de 5 pays. Affiche, ajoute, supprime.",
+            "pratique": "Quiz avec questions en liste."
+          },
+          {
+            "numero": 5,
+            "titre": "Blocs personnalises",
+            "objectifs": "Creer 'Ma fonction' Parametres",
+            "notions": "Fonction reutilisable. Evite la repetition.",
+            "exercice": "dessinerCarre(cote) et dessinerPolygone(cotes,taille).",
+            "pratique": "Refactoriser son labyrinthe."
+          },
+          {
+            "numero": 6,
+            "titre": "Jeu de tir",
+            "objectifs": "Projectiles (clones) Collisions et score",
+            "notions": "Vaisseau en bas, ennemis du haut, on tire.",
+            "exercice": "Jeu de tir spatial avec score et vies.",
+            "pratique": "Niveaux de difficulte."
+          },
+          {
+            "numero": 7,
+            "titre": "Platformer avance",
+            "objectifs": "Gravite realiste Plusieurs niveaux",
+            "notions": "Gravite = variable vitesseY. Plateformes = couleurs.",
+            "exercice": "Platformer 3 plateformes, monter de niveau.",
+            "pratique": "Power-ups (vitesse, invincibilite)."
+          },
+          {
+            "numero": 8,
+            "titre": "Animations et effets",
+            "objectifs": "Effets graphiques Transitions fluides",
+            "notions": "Fantome, couleur, mosaique, tournoyer...",
+            "exercice": "Animation de transformation (magicien, fumee).",
+            "pratique": "Court-metrage 30 secondes."
+          },
+          {
+            "numero": 9,
+            "titre": "Musique et rythme",
+            "objectifs": "Notes de musique Jouer une melodie",
+            "notions": "Blocs 'jouer la note X pendant Y temps'.",
+            "exercice": "Programme 'Au clair de la lune'.",
+            "pratique": "Jeu de rythme simplifie."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 1",
+            "description": "Jeu complet Scratch : sprite, ennemis, projectiles/collectibles, score, vies, victoire+defaite, ecran accueil."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 2",
+            "description": "QCM 15 questions Scratch (conditions, variables, listes, clones, messages, operateurs)."
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "label": "Trimestre 2",
+        "matiere": "6e",
+        "color": "#1565C0",
+        "lessons": [
+          {
+            "numero": 10,
+            "titre": "Algorithmes : definition",
+            "objectifs": "Algorithme formel 3 structures",
+            "notions": "Suite finie d'instructions non ambigues.",
+            "exercice": "Algorithme du tri de cartes.",
+            "pratique": "5 algorithmes quotidiens."
+          },
+          {
+            "numero": 11,
+            "titre": "Organigrammes",
+            "objectifs": "Symboles normalises Traduire algo > organigramme",
+            "notions": "Ovale=debut/fin, rectangle=action, losange=condition.",
+            "exercice": "Organigramme complet 'Faire un gateau' (15 etapes).",
+            "pratique": "Utiliser Draw.io."
+          },
+          {
+            "numero": 12,
+            "titre": "Recherche dichotomique",
+            "objectifs": "Diviser pour regner Comparer avec sequentielle",
+            "notions": "On divise en 2 a chaque etape. Bien plus rapide !",
+            "exercice": "Cherche 42 dans [1..100] par dichotomie.",
+            "pratique": "Programmer en Scratch."
+          },
+          {
+            "numero": 13,
+            "titre": "Tris : insertion et selection",
+            "objectifs": "Implementer les 2 Comparer l'efficacite",
+            "notions": "Insertion : inserer a sa place. Selection : chercher le + petit.",
+            "exercice": "Trie [38,27,43,3,9,82,10] avec les 2 methodes.",
+            "pratique": "Animation Scratch des tris."
+          },
+          {
+            "numero": 14,
+            "titre": "Logique booleenne",
+            "objectifs": "ET, OU, NON Tables de verite",
+            "notions": "Booleen = VRAI/FAUX.",
+            "exercice": "Complete les tables de verite. Resous : (VRAI ET FAUX) OU NON(FAUX).",
+            "pratique": "Enigmes booleennes en Scratch."
+          },
+          {
+            "numero": 15,
+            "titre": "Projet algorithme Scratch",
+            "objectifs": "Tri visuel Recherche visuelle",
+            "notions": "Visualiser aide a comprendre.",
+            "exercice": "Programme le tri par insertion visuel.",
+            "pratique": "Visualiseur d'algo complet."
+          },
+          {
+            "numero": 16,
+            "titre": "Tableur : fonctions avancees",
+            "objectifs": "SI(), RECHERCHEV() Formules conditionnelles",
+            "notions": "SI(condition, vrai, faux). RECHERCHEV cherche dans tableau.",
+            "exercice": "Bulletin automatise : SI moyenne>=10 Admis sinon Redouble.",
+            "pratique": "Suivi de progression annuel."
+          },
+          {
+            "numero": 17,
+            "titre": "Tableur : graphiques avances",
+            "objectifs": "Combine (batons + ligne) Courbe de tendance",
+            "notions": "Superposer plusieurs types de graphiques.",
+            "exercice": "Graphique temperatures mensuelles.",
+            "pratique": "Etude statistique (sondage classe)."
+          },
+          {
+            "numero": 18,
+            "titre": "Communication orale",
+            "objectifs": "Structurer en 3 parties Supports visuels efficaces",
+            "notions": "Intro (j'annonce), Dev (j'explique), Concl (je resume).",
+            "exercice": "Expose 5 min sur sujet scientifique.",
+            "pratique": "Expose sans notes."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 3",
+            "description": "Algorithme tri selection + organigramme. Cherche 56 par dichotomie dans [2,5,8,12,16,23,38,45,56,72]."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 4",
+            "description": "Tableur : 10 eleves, 4 notes, moyenne, SI imbrique, graphique moyennes."
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "label": "Trimestre 3",
+        "matiere": "6e",
+        "color": "#6A1B9A",
+        "lessons": [
+          {
+            "numero": 19,
+            "titre": "Revision HTML",
+            "objectifs": "Toutes les balises Commentaires, attributs",
+            "notions": "Revision complete : doctype, html, head, body, h1-h6, p, a, img, ul/ol, table.",
+            "exercice": "Page utilisant toutes les balises revisees.",
+            "pratique": "Corriger un code avec 10 erreurs."
+          },
+          {
+            "numero": 20,
+            "titre": "CSS : selecteurs avances",
+            "objectifs": ".maClasse, #monID :hover, :first-child",
+            "notions": "Classes = plusieurs. ID = unique. :hover = au survol.",
+            "exercice": "Navigation qui change de couleur au survol.",
+            "pratique": "Menu deroulant CSS pur."
+          },
+          {
+            "numero": 21,
+            "titre": "CSS : modele de boite",
+            "objectifs": "width, max-width margin:auto (centrer)",
+            "notions": "Chaque element est une boite.",
+            "exercice": "Page centree max-width 800px. Header, contenu, footer.",
+            "pratique": "Reproduire une mise en page connue."
+          },
+          {
+            "numero": 22,
+            "titre": "Mini-projet web",
+            "objectifs": "3 pages sur un theme Design coherent",
+            "notions": "Projet : theme, 3 pages HTML+CSS partage, navigation.",
+            "exercice": "Mini-site sur les planetes (1 page/planete + accueil).",
+            "pratique": "Ajouter une page Quiz."
+          },
+          {
+            "numero": 23,
+            "titre": "Robotique virtuelle",
+            "objectifs": "Simulateur (VEXcode, mBlock) Programmer un robot",
+            "notions": "Simulateur = robot virtuel sans acheter de materiel.",
+            "exercice": "Programme un robot pour suivre une ligne.",
+            "pratique": "Defi de robotique virtuelle."
+          },
+          {
+            "numero": 24,
+            "titre": "Scratch : simulateur",
+            "objectifs": "Ecosysteme, traffic, meteo Variables et graphiques",
+            "notions": "Modeliser un phenomene avec Scratch.",
+            "exercice": "Simulateur ecosysteme (renards/lapins).",
+            "pratique": "Graphiques en temps reel."
+          },
+          {
+            "numero": 25,
+            "titre": "Projet final",
+            "objectifs": "Au choix : web, Scratch, tableur Planifier et realiser",
+            "notions": "Chaque eleve choisit son format prefere.",
+            "exercice": "Realise ton projet. Documente tes choix.",
+            "pratique": "Evaluation par 2 camarades."
+          },
+          {
+            "numero": 26,
+            "titre": "Documentation",
+            "objectifs": "Rediger un README Creer un tutoriel",
+            "notions": "Expliquer comment ca marche pour les autres.",
+            "exercice": "Tutoriel 1 page pour ton projet.",
+            "pratique": "Video demo 2 min."
+          },
+          {
+            "numero": 27,
+            "titre": "Bilan 6e",
+            "objectifs": "Presentations et auto-evaluation Perspectives 5e",
+            "notions": "Competences 6e completes.",
+            "exercice": "Presente ton projet 5 min. Grille d'auto-eval.",
+            "pratique": "Vote du meilleur projet !"
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 5",
+            "description": "Projet format libre (web, Scratch, tableur) + documentation 1 page."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 6",
+            "description": "QCM 20 questions + presentation orale du projet."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "classe": "CE1",
+    "matiere": "CE1",
+    "trimestres": [
+      {
+        "numero": 1,
+        "label": "Trimestre 1",
+        "matiere": "CE1",
+        "color": "#1B5E20",
+        "lessons": [
+          {
+            "numero": 1,
+            "titre": "Rappel : parties de l'ordinateur",
+            "objectifs": "Reviser ecran, clavier, souris, unite centrale Allumer/eteindre seul(e)",
+            "notions": "L'unite centrale est le cerveau. Allumer = bouton. Eteindre = Demarrer > Arreter.",
+            "exercice": "Dessine et legende un ordinateur sur papier. Explique a un camarade.",
+            "pratique": "Creer une affiche pour la classe."
+          },
+          {
+            "numero": 2,
+            "titre": "Entree, Espace, Retour",
+            "objectifs": "Utiliser Entree, Espace, Retour arriere Corriger une erreur",
+            "notions": "Entree = valider/nouvelle ligne. Espace = grand barre. Retour = efface.",
+            "exercice": "Tape 3 phrases courtes. Utilise Entree entre chaque phrase.",
+            "pratique": "Jeu de vitesse : taper une phrase donnee le plus vite possible."
+          },
+          {
+            "numero": 3,
+            "titre": "Majuscules et minuscules",
+            "objectifs": "Shift pour MAJUSCULE Distinguer les 2 casses",
+            "notions": "Shift + lettre = MAJUSCULE. Toujours une majuscule en debut de phrase.",
+            "exercice": "Tape : Mon ami s'appelle Amina. Elle habite a Dakar.",
+            "pratique": "Ecrire 10 prenoms avec la bonne majuscule."
+          },
+          {
+            "numero": 4,
+            "titre": "Selectionner du texte",
+            "objectifs": "Cliquer-glisser Double-clic = un mot",
+            "notions": "Selectionner = entourer le texte pour le modifier. Apparait en bleu.",
+            "exercice": "Tape 10 mots. Selectionne le 1er, le dernier, puis toute la phrase.",
+            "pratique": "Jeu : un camarade dit un mot, tu le selectionnes dans un texte."
+          },
+          {
+            "numero": 5,
+            "titre": "Copier, Couper, Coller",
+            "objectifs": "Ctrl+C, Ctrl+X, Ctrl+V Dupliquer ou deplacer",
+            "notions": "Ctrl+C = Copier, Ctrl+X = Couper, Ctrl+V = Coller.",
+            "exercice": "Tape 'J'aime l'informatique'. Copie-la 3 fois. Coupe la 2e et colle-la ailleurs.",
+            "pratique": "Creer un poeme par duplication et modification de vers."
+          },
+          {
+            "numero": 6,
+            "titre": "Glisser-deposer",
+            "objectifs": "Deplacer une icone Deplacer du texte",
+            "notions": "Cliquer-maintenir-deplacer-lacher. Fonctionne pour icones ET texte.",
+            "exercice": "Deplace 3 icones, puis remets-les en place.",
+            "pratique": "Organiser le Bureau en groupes d'icones."
+          },
+          {
+            "numero": 7,
+            "titre": "La molette de la souris",
+            "objectifs": "Defiler haut/bas Clic-molette",
+            "notions": "La molette entre les 2 boutons fait defiler les pages.",
+            "exercice": "Ouvre un long document. Defile du debut a la fin.",
+            "pratique": "Naviguer sur une page web simple avec la molette."
+          },
+          {
+            "numero": 8,
+            "titre": "Le clavier numerique",
+            "objectifs": "Reperer les chiffres 0-9 Utiliser le pave numerique",
+            "notions": "Les chiffres sont en haut et sur le pave numerique a droite.",
+            "exercice": "Tape les nombres de 1 a 20, un par ligne.",
+            "pratique": "Dictee de nombres."
+          },
+          {
+            "numero": 9,
+            "titre": "Les touches de direction",
+            "objectifs": "Utiliser les 4 fleches Naviguer sans souris",
+            "notions": "Les fleches deplacent le curseur dans le texte. Pratique pour corriger !",
+            "exercice": "Tape un paragraphe. Utilise les fleches pour naviguer et corriger.",
+            "pratique": "Corriger un texte SANS utiliser la souris."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 1 : Pratique clavier",
+            "description": "1) Tape ton prenom, age, ville (majuscules). 2) Copie-colle une phrase 3 fois. 3) Navigue aux fleches."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 2 : QCM",
+            "description": "10 questions sur le clavier, la souris et les raccourcis (Entree, Espace, Shift, Ctrl+C/V, fleches)."
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "label": "Trimestre 2",
+        "matiere": "CE1",
+        "color": "#1565C0",
+        "lessons": [
+          {
+            "numero": 10,
+            "titre": "Creer un dossier",
+            "objectifs": "Clic droit > Dossier Nom descriptif",
+            "notions": "Bon nom = decrit le contenu. Ex : 'CE1-Dessins', pas 'aaa'.",
+            "exercice": "Cree 3 dossiers : CE1-Francais, CE1-Maths, CE1-Dessins.",
+            "pratique": "Organiser tous ses fichiers de l'annee."
+          },
+          {
+            "numero": 11,
+            "titre": "Renommer un fichier",
+            "objectifs": "Clic droit > Renommer Attention a l'extension !",
+            "notions": "On peut renommer a tout moment. Garder l'extension (.txt, .png).",
+            "exercice": "Renomme 3 anciens fichiers avec des noms plus clairs.",
+            "pratique": "Uniformiser les noms de fichiers."
+          },
+          {
+            "numero": 12,
+            "titre": "Enregistrer sous...",
+            "objectifs": "Fichier > Enregistrer sous Creer une copie avec nouveau nom",
+            "notions": "Enregistrer sous = dupliquer avec un nouveau nom ou emplacement.",
+            "exercice": "Ouvre un dessin. Enregistre sous avec '-v2' dans le nom.",
+            "pratique": "Creer differentes versions d'un dessin."
+          },
+          {
+            "numero": 13,
+            "titre": "Paint : paysage complet",
+            "objectifs": "Planifier Utiliser tous les outils",
+            "notions": "1) Fond (ciel, herbe) 2) Elements (soleil, arbres) 3) Details (fleurs, oiseaux).",
+            "exercice": "Dessine un paysage avec 8 elements minimum.",
+            "pratique": "Serie des 4 saisons."
+          },
+          {
+            "numero": 14,
+            "titre": "Paint : personnage detaille",
+            "objectifs": "Visage expressif Vetements et accessoires",
+            "notions": "Personnage = tete + corps + membres + vetements + details.",
+            "exercice": "Dessine ton heros prefere avec tous les details.",
+            "pratique": "Creer une mini-BD de 4 cases."
+          },
+          {
+            "numero": 15,
+            "titre": "Bloc-Notes : formater un poeme",
+            "objectifs": "Entree pour les vers Aligner le texte",
+            "notions": "Menu Format > Alignement.",
+            "exercice": "Ecris un poeme de 4 vers. Centre le titre.",
+            "pratique": "Illustrer le poeme dans Paint."
+          },
+          {
+            "numero": 16,
+            "titre": "Emojis et symboles",
+            "objectifs": "Windows+. pour emojis Inserer des symboles",
+            "notions": "Touche Windows + . ouvre le panneau emoji !",
+            "exercice": "Ecris 5 messages avec des emojis dans le Bloc-Notes.",
+            "pratique": "Creer un repertoire d'emojis par categorie."
+          },
+          {
+            "numero": 17,
+            "titre": "Retoucher un dessin",
+            "objectifs": "Rouvrir un dessin Modifier et re-enregistrer",
+            "notions": "Un .png enregistre peut etre rouvert et modifie.",
+            "exercice": "Ouvre un ancien dessin, ajoute 3 elements, enregistre.",
+            "pratique": "Projet evolutif : ameliorer un dessin chaque semaine."
+          },
+          {
+            "numero": 18,
+            "titre": "Projet : mon imagier",
+            "objectifs": "5 dessins sur un theme Rassembler dans un dossier",
+            "notions": "Theme au choix : animaux, fruits, pays, sports...",
+            "exercice": "Cree ton imagier dans 'Mon-Imagier'. 5 dessins + 5 mini-textes.",
+            "pratique": "Echanger les imagiers entre camarades."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 3 : Creation",
+            "description": "Cree un dossier 'Examen-CE1'. Dedans : 1 dessin Paint + 1 texte 4 phrases sur ta famille."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 4 : Manipulation",
+            "description": "Cree 3 dossiers, deplace des fichiers, renomme, supprime et restaure."
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "label": "Trimestre 3",
+        "matiere": "CE1",
+        "color": "#6A1B9A",
+        "lessons": [
+          {
+            "numero": 19,
+            "titre": "Saisir un paragraphe",
+            "objectifs": "4-5 phrases coherentes Se relire et corriger",
+            "notions": "Un paragraphe a un sujet et des phrases qui s'enchainent.",
+            "exercice": "Ecris sur 'Ce que j'aime faire le weekend' (5 phrases).",
+            "pratique": "Journal de bord hebdomadaire."
+          },
+          {
+            "numero": 20,
+            "titre": "WordPad : decouverte",
+            "objectifs": "Ouvrir WordPad Gras, Italique, Souligne",
+            "notions": "WordPad est plus avance que le Bloc-Notes : mise en forme du texte.",
+            "exercice": "Tape ton prenom en gras, rouge, taille 20.",
+            "pratique": "Comparer Bloc-Notes et WordPad."
+          },
+          {
+            "numero": 21,
+            "titre": "WordPad : alignement",
+            "objectifs": "Gauche, centre, droite, justifie Listes a puces et numeros",
+            "notions": "L'alignement change la position. Les listes organisent.",
+            "exercice": "Cree un document 'Mes 5 fruits preferes' avec titre centre et listes.",
+            "pratique": "Creer un mode d'emploi numerote."
+          },
+          {
+            "numero": 22,
+            "titre": "Paint : carte de voeux",
+            "objectifs": "Fond + illustration + message Ajouter du texte decoratif",
+            "notions": "Une carte a un joli fond, une image, un message.",
+            "exercice": "Cree une carte pour un membre de ta famille.",
+            "pratique": "Calendrier des anniversaires de la classe."
+          },
+          {
+            "numero": 23,
+            "titre": "Naviguer dans les fenetres",
+            "objectifs": "2 fenetres cote a cote Reduire, agrandir, fermer",
+            "notions": "Win+fleche gauche/droite place une fenetre a gauche ou droite.",
+            "exercice": "Ouvre Paint et Bloc-Notes cote a cote.",
+            "pratique": "Ecrire en regardant un dessin de reference."
+          },
+          {
+            "numero": 24,
+            "titre": "Les boites de dialogue",
+            "objectifs": "Lire les messages Cliquer sur le bon bouton",
+            "notions": "L'ordi pose des questions : 'Voulez-vous enregistrer ?'",
+            "exercice": "Ferme Paint sans enregistrer. Lis le message. Choisis Oui, puis refais avec Non.",
+            "pratique": "Expliquer la difference Enregistrer/Ne pas enregistrer/Annuler."
+          },
+          {
+            "numero": 25,
+            "titre": "Imprimer un document",
+            "objectifs": "Fichier > Imprimer Choisir l'imprimante",
+            "notions": "Toujours demander la permission avant d'imprimer !",
+            "exercice": "Avec un adulte, imprime ton dessin.",
+            "pratique": "Creer un petit livret imprime des meilleurs dessins."
+          },
+          {
+            "numero": 26,
+            "titre": "Projet : mon livre numerique",
+            "objectifs": "Planifier un petit livre Pages dessin + texte",
+            "notions": "Livre = couverture + 3 pages + fin. Chaque page = 1 dessin + 1 texte.",
+            "exercice": "Cree ton livre dans 'Mon-Livre'.",
+            "pratique": "Exposition aux parents."
+          },
+          {
+            "numero": 27,
+            "titre": "Bilan CE1",
+            "objectifs": "Reviser toutes les competences Auto-evaluation",
+            "notions": "Competences CE1 : souris complete, clavier (touches, Shift, chiffres, fleches), copier/coller/glisser, Paint avance, dossiers, WordPad, impression.",
+            "exercice": "Liste tout ce que tu as appris. Etoile = maitrise, point = a travailler.",
+            "pratique": "Celebration et exposition !"
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 5 : Pratique complete",
+            "description": "Cree un dossier 'Examen-CE1-Final'. Dedans : dessin Paint + texte WordPad 5 phrases avec titre en gras."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 6 : Oral",
+            "description": "Presente ton livre numerique en 3 min. Explique les outils utilises et ce que tu as aime."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "classe": "CE2",
+    "matiere": "CE2",
+    "trimestres": [
+      {
+        "numero": 1,
+        "label": "Trimestre 1",
+        "matiere": "CE2",
+        "color": "#1B5E20",
+        "lessons": [
+          {
+            "numero": 1,
+            "titre": "Revision CE1",
+            "objectifs": "Reviser acquis Identifier points faibles",
+            "notions": "Revision clavier, souris, Paint, Bloc-Notes, dossiers.",
+            "exercice": "Liste 5 choses maitrisees + 2 a ameliorer.",
+            "pratique": "Auto-test : allumer, ouvrir Paint, taper, enregistrer, eteindre."
+          },
+          {
+            "numero": 2,
+            "titre": "Explorateur en profondeur",
+            "objectifs": "Naviguer l'arborescence Creer sous-dossiers",
+            "notions": "Win+E ouvre l'Explorateur. Arborescence = dossiers > sous-dossiers.",
+            "exercice": "Cree Ecole > [Francais, Maths, Sciences, Informatique].",
+            "pratique": "Explorer le disque C: sans rien modifier."
+          },
+          {
+            "numero": 3,
+            "titre": "Renommer et reorganiser",
+            "objectifs": "Selection multiple (Ctrl+clic) Deplacer plusieurs fichiers",
+            "notions": "Ctrl+clic selectionne plusieurs fichiers pour les deplacer ensemble.",
+            "exercice": "Selectionne 3 dessins, deplace-les dans Dessins. Renomme un dossier.",
+            "pratique": "Grand rangement : reorganiser TOUS ses fichiers."
+          },
+          {
+            "numero": 4,
+            "titre": "Proprietes d'un fichier",
+            "objectifs": "Clic droit > Proprietes Taille, date, type",
+            "notions": "Chaque fichier a : taille (Ko/Mo/Go), date creation, date modification, type.",
+            "exercice": "Verifie les proprietes de 5 fichiers. Quel est le plus gros ? le plus recent ?",
+            "pratique": "Classer ses fichiers par taille."
+          },
+          {
+            "numero": 5,
+            "titre": "Extensions de fichiers",
+            "objectifs": ".txt, .png, .docx, .pdf Comprendre l'extension",
+            "notions": "L'extension (apres le point) indique le type. .txt = texte, .png = image.",
+            "exercice": "Active l'affichage des extensions. Note l'extension de 10 fichiers.",
+            "pratique": "Jeu : associer extension et programme."
+          },
+          {
+            "numero": 6,
+            "titre": "WordPad : mise en forme",
+            "objectifs": "Gras, italique, souligne Police, taille, couleur",
+            "notions": "WordPad = mini-Word gratuit. Barre d'outils complete.",
+            "exercice": "Titre en Arial 18pt rouge gras. Paragraphe en Times 12pt noir.",
+            "pratique": "Creer une affiche pour l'ecole."
+          },
+          {
+            "numero": 7,
+            "titre": "WordPad : alignement et listes",
+            "objectifs": "Gauche, centre, droite, justifie Puces et numeros",
+            "notions": "L'alignement positionne le texte. Les listes organisent les idees.",
+            "exercice": "Document 'Mes 5 films preferes' : titre centre, liste puces, paragraphe justifie.",
+            "pratique": "Mode d'emploi numerote."
+          },
+          {
+            "numero": 8,
+            "titre": "Paint : zoom et copier-coller",
+            "objectifs": "Zoom pour les details Copier une partie de l'image",
+            "notions": "Zoom = loupe. Selectionner + Ctrl+C/V pour dupliquer.",
+            "exercice": "Dessine un arbre. Zoom sur les feuilles. Duplique l'arbre pour faire une foret.",
+            "pratique": "Creer un motif repetitif."
+          },
+          {
+            "numero": 9,
+            "titre": "Corbeille definitive",
+            "objectifs": "Vider la Corbeille Suppression vs definitive",
+            "notions": "Vider = fichier definitivement perdu. Toujours verifier avant !",
+            "exercice": "Verifie le contenu de la Corbeille. Restaure l'important. Vide le reste.",
+            "pratique": "Menage de fin de trimestre."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 1",
+            "description": "Cree l'arborescence Examen-CE2 > [Trimestre1, Trimestre2]. Dedans : 1 WordPad formatte + 1 Paint."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 2",
+            "description": "Dans WordPad : titre centre Arial 16 rouge, 2 paragraphes justifies, 1 liste puces, 1 liste numerotee."
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "label": "Trimestre 2",
+        "matiere": "CE2",
+        "color": "#1565C0",
+        "lessons": [
+          {
+            "numero": 10,
+            "titre": "Qu'est-ce qu'Internet ?",
+            "objectifs": "Definir Internet Internet vs Web",
+            "notions": "Internet = reseau mondial d'ordinateurs. Web = service SUR Internet.",
+            "exercice": "Explique la difference avec tes mots.",
+            "pratique": "Dessiner un schema : ordinateurs relies = Internet, pages = Web."
+          },
+          {
+            "numero": 11,
+            "titre": "Le navigateur web",
+            "objectifs": "Ouvrir Chrome/Firefox/Edge Barre d'adresse et onglets",
+            "notions": "Le navigateur sert a visiter des sites. La barre d'adresse est en haut.",
+            "exercice": "Nomme les elements du navigateur.",
+            "pratique": "Ajouter 3 favoris."
+          },
+          {
+            "numero": 12,
+            "titre": "Taper une URL",
+            "objectifs": "Saisir sans faute .com, .fr, .org, .edu",
+            "notions": "URL = adresse web. Extensions : .com (commerce), .fr (France), .org (org).",
+            "exercice": "Tape wikipedia.fr, education.gouv.fr, scratch.mit.edu. Note le contenu.",
+            "pratique": "Deviner l'URL d'une organisation."
+          },
+          {
+            "numero": 13,
+            "titre": "Utiliser un moteur de recherche",
+            "objectifs": "Mots-cles pertinents Analyser les resultats",
+            "notions": "Bien choisir ses mots-cles (3-4 mots) pour des resultats precis.",
+            "exercice": "Cherche : capitale du Kenya, animal le plus rapide, recette crepe.",
+            "pratique": "Comparer Google et Qwant."
+          },
+          {
+            "numero": 14,
+            "titre": "Fiabilite des sources",
+            "objectifs": "Qui a ecrit ? Quand ? Croiser les infos",
+            "notions": "N'importe qui peut publier sur Internet. Verifier : auteur, date, autres sources.",
+            "exercice": "Cherche 'les chats voient-ils dans le noir ?' sur 3 sites. Compare.",
+            "pratique": "Creer une grille d'evaluation de sites."
+          },
+          {
+            "numero": 15,
+            "titre": "Securite en ligne",
+            "objectifs": "Ne pas donner ses infos personnelles Reconnaitre un site sur",
+            "notions": "Donnees personnelles = nom complet, adresse, telephone... JAMAIS a des inconnus !",
+            "exercice": "Liste 5 infos a ne JAMAIS partager + 3 qu'on peut partager.",
+            "pratique": "Affiche 'Les regles d'or d'Internet'."
+          },
+          {
+            "numero": 16,
+            "titre": "Les mots de passe",
+            "objectifs": "8+ caracteres, chiffres, symbole Ne jamais partager",
+            "notions": "Bon MDP : Ch@tNoir2026! Mauvais : 123456, azerty, date de naissance.",
+            "exercice": "Invente 3 mots de passe solides. Explique pourquoi.",
+            "pratique": "Tester la force de ses MDP."
+          },
+          {
+            "numero": 17,
+            "titre": "Recherche documentaire",
+            "objectifs": "Trouver des infos Prendre des notes (pas copier-coller)",
+            "notions": "1) Chercher, 2) Lire plusieurs sources, 3) Noter avec ses mots.",
+            "exercice": "Cherche 5 infos sur un animal. Note-les dans WordPad.",
+            "pratique": "Creer une fiche documentaire illustree."
+          },
+          {
+            "numero": 18,
+            "titre": "WordPad : inserer une image",
+            "objectifs": "Image depuis un fichier Redimensionner",
+            "notions": "Insertion > Image. Redimensionner en tirant les coins.",
+            "exercice": "Ajoute une image de ton animal a ta fiche documentaire.",
+            "pratique": "Document illustre de 3 pages sur un pays."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 3",
+            "description": "Choisis un pays d'Afrique. Recherche : capitale, population, langue, monnaie, 2 faits. Presente dans WordPad."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 4",
+            "description": "QCM 10 questions securite + cree un mot de passe solide et explique pourquoi."
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "label": "Trimestre 3",
+        "matiere": "CE2",
+        "color": "#6A1B9A",
+        "lessons": [
+          {
+            "numero": 19,
+            "titre": "Planifier un projet",
+            "objectifs": "Choisir un sujet Definir les etapes",
+            "notions": "1) Sujet, 2) Fichiers a creer, 3) Dossier, 4) Temps necessaire.",
+            "exercice": "Planifie ton projet de fin d'annee. Ecris le plan dans WordPad.",
+            "pratique": "Partager son plan avec un camarade."
+          },
+          {
+            "numero": 20,
+            "titre": "Paint : dessin d'observation",
+            "objectifs": "Observer un objet reel Reproduire a l'ecran",
+            "notions": "On regarde un objet et on le reproduit avec les formes et couleurs.",
+            "exercice": "Choisis un objet de la classe. Dessine-le en l'observant.",
+            "pratique": "Galerie des dessins d'observation."
+          },
+          {
+            "numero": 21,
+            "titre": "WordPad : redaction",
+            "objectifs": "Ecrire un article structure Relire et corriger",
+            "notions": "Article = titre + intro (1 phrase) + developpement (3-4) + conclusion.",
+            "exercice": "Redige un article sur un evenement recent. Relis et corrige.",
+            "pratique": "Journal de la classe."
+          },
+          {
+            "numero": 22,
+            "titre": "Paint : dessin d'imagination",
+            "objectifs": "Inventer une creature Utiliser tous les outils",
+            "notions": "Pas de modele : on invente ! Creature, planete, machine du futur...",
+            "exercice": "Invente et dessine une creature fantastique. Donne-lui un nom.",
+            "pratique": "Bestiaire fantastique."
+          },
+          {
+            "numero": 23,
+            "titre": "Presentation simple",
+            "objectifs": "PowerPoint/Google Slides Creer 3 diapos",
+            "notions": "Une diapo = 1 titre + du contenu.",
+            "exercice": "Cree 3 diapos sur ton animal prefere. Ajoute des images.",
+            "pratique": "Presenter en 3 minutes."
+          },
+          {
+            "numero": 24,
+            "titre": "Projet final",
+            "objectifs": "Rechercher, rediger, dessiner Assembler",
+            "notions": "Projet complet : dossier, WordPad illustre, Paint, 3 diapos.",
+            "exercice": "Realise le projet complet sur le pays de ton choix.",
+            "pratique": "Répétition de la presentation."
+          },
+          {
+            "numero": 25,
+            "titre": "Menage numerique",
+            "objectifs": "Reviser l'arborescence Supprimer l'inutile",
+            "notions": "Fin d'annee = menage ! Supprimer, reorganiser, sauvegarder.",
+            "exercice": "Parcours tes dossiers. Supprime l'inutile. Cree 'CE2-Archives'.",
+            "pratique": "Sauvegarde sur cle USB."
+          },
+          {
+            "numero": 26,
+            "titre": "Preparer l'exposition",
+            "objectifs": "Selectionner ses 3 meilleurs travaux Presentation de 3 min",
+            "notions": "Choisir 1 dessin, 1 texte, 1 diaporama a presenter.",
+            "exercice": "Selectionne tes travaux. Prepare ta presentation.",
+            "pratique": "Répétition generale."
+          },
+          {
+            "numero": 27,
+            "titre": "Bilan CE2",
+            "objectifs": "Auto-evaluation Se projeter en CM1",
+            "notions": "Competences CE2 : tout le programme + Internet, securite, presentations.",
+            "exercice": "Complete la grille. Note 3 choses a apprendre en CM1.",
+            "pratique": "Exposition et celebration !"
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 5",
+            "description": "Projet integre : dossier, texte illustre, dessin, presentation 3 diapos sur sujet libre."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 6",
+            "description": "Presente ton projet final en 5 min. Reponds aux questions."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "classe": "CM1",
+    "matiere": "CM1",
+    "trimestres": [
+      {
+        "numero": 1,
+        "label": "Trimestre 1",
+        "matiere": "CM1",
+        "color": "#1B5E20",
+        "lessons": [
+          {
+            "numero": 1,
+            "titre": "Word : l'interface",
+            "objectifs": "Ruban, onglets, barre d'outils Word > WordPad",
+            "notions": "Word = outil pro. Onglets : Accueil, Insertion, Creation, Mise en page...",
+            "exercice": "Explore Word. Note le nom de 5 onglets et leur role.",
+            "pratique": "Comparer Word, WordPad, Bloc-Notes."
+          },
+          {
+            "numero": 2,
+            "titre": "Word : titres et styles",
+            "objectifs": "Styles Titre 1, Titre 2 Table des matieres auto",
+            "notions": "Les styles forment automatiquement et generent la table des matieres.",
+            "exercice": "Cree un document avec Titre 1, deux Titres 2, texte normal.",
+            "pratique": "Reformater un document existant avec les styles."
+          },
+          {
+            "numero": 3,
+            "titre": "Word : paragraphes",
+            "objectifs": "Sauts de page Interligne et espacement",
+            "notions": "Document pro = interligne 1,5 + sauts de page entre sections.",
+            "exercice": "Mets interligne 1,5. Ajoute saut de page avant chaque Titre 1.",
+            "pratique": "Creer un template pour les devoirs."
+          },
+          {
+            "numero": 4,
+            "titre": "Word : tableaux",
+            "objectifs": "Inserer un tableau Fusionner, bordures",
+            "notions": "Insertion > Tableau. Fusionner = combiner des cellules.",
+            "exercice": "Cree un tableau 4x6 (Pays, Capitale, Population, Langue). 5 pays.",
+            "pratique": "Creer l'emploi du temps de la classe."
+          },
+          {
+            "numero": 5,
+            "titre": "Word : images et habillage",
+            "objectifs": "Inserer une image Habillage (carre, rapproche...)",
+            "notions": "L'habillage determine comment le texte entoure l'image.",
+            "exercice": "Insere une image, teste les 4 habillages.",
+            "pratique": "Page de garde illustree."
+          },
+          {
+            "numero": 6,
+            "titre": "Word : entete et pied de page",
+            "objectifs": "Ajouter entete/pied Numero de page auto",
+            "notions": "Elements repetes sur chaque page.",
+            "exercice": "Ajoute entete (ton nom) + pied (numero de page).",
+            "pratique": "Document de 5 pages avec pagination."
+          },
+          {
+            "numero": 7,
+            "titre": "Word : colonnes",
+            "objectifs": "Mise en page > Colonnes 2 ou 3 colonnes",
+            "notions": "Le texte peut etre en colonnes comme un journal.",
+            "exercice": "Cree un 'Journal de la classe' 2 colonnes, 3 articles.",
+            "pratique": "Imprimer le journal."
+          },
+          {
+            "numero": 8,
+            "titre": "Word : correcteur",
+            "objectifs": "F7 = orthographe Suggestions (clic droit)",
+            "notions": "Rouge = orthographe. Bleu = grammaire.",
+            "exercice": "Ecris un texte avec 5 fautes. Passe le correcteur.",
+            "pratique": "Defi : ecrire un texte sans faute."
+          },
+          {
+            "numero": 9,
+            "titre": "Recherche Internet",
+            "objectifs": "Mots-cles precis 3 sources, comparer, noter",
+            "notions": "Methodologie : mots-cles > 3 sites > comparer > noter source (URL, date).",
+            "exercice": "Cherche 'histoire de l'ordinateur' sur 3 sites. Compare.",
+            "pratique": "Guide 'Comment bien chercher sur Internet'."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 1",
+            "description": "Document Word 3 pages : page de garde, 2 sections, colonnes, 2 images, entete/pied."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 2",
+            "description": "Recherche documentaire sur un inventeur informatique : 3 sources, synthese Word."
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "label": "Trimestre 2",
+        "matiere": "CM1",
+        "color": "#1565C0",
+        "lessons": [
+          {
+            "numero": 10,
+            "titre": "PowerPoint : interface",
+            "objectifs": "Diapositives, onglets Creer 5 diapos",
+            "notions": "PowerPoint cree des diaporamas.",
+            "exercice": "Cree 'Moi en 5 points' : 5 diapos avec titres et textes.",
+            "pratique": "Analyser des exemples de bonnes/mauvaises presentations."
+          },
+          {
+            "numero": 11,
+            "titre": "PowerPoint : themes",
+            "objectifs": "Appliquer un theme Couleurs harmonieuses",
+            "notions": "Creation > Themes donne un aspect pro en 1 clic.",
+            "exercice": "Teste 3 themes sur ta presentation.",
+            "pratique": "Creer une palette de couleurs personnalisee."
+          },
+          {
+            "numero": 12,
+            "titre": "PowerPoint : transitions/animations",
+            "objectifs": "Transitions entre diapos Animer des elements",
+            "notions": "Transitions = entre diapos. Animations = dans une diapo.",
+            "exercice": "Ajoute transitions et anime 2 titres + 1 image.",
+            "pratique": "Presentation SANS animations (sobriete)."
+          },
+          {
+            "numero": 13,
+            "titre": "PowerPoint : SmartArt",
+            "objectifs": "Images libres de droit Diagrammes (processus, cycle)",
+            "notions": "SmartArt = diagrammes automatiques.",
+            "exercice": "Ajoute un SmartArt 'Processus' (recette) et 'Cycle' (saisons).",
+            "pratique": "Organigramme de la classe."
+          },
+          {
+            "numero": 14,
+            "titre": "Presenter a l'oral",
+            "objectifs": "Regarder le public 1 idee/diapo, mots-cles",
+            "notions": "Regles d'or : ne pas lire, parler fort, 3-5 min.",
+            "exercice": "Prepare 5 diapos sur ton loisir. Entraine-toi.",
+            "pratique": "Expose sans notes."
+          },
+          {
+            "numero": 15,
+            "titre": "Excel : premiers pas",
+            "objectifs": "Cellules, lignes, colonnes Saisir des donnees",
+            "notions": "Un tableur organise les donnees. Chaque case = cellule.",
+            "exercice": "Tableau 'Notes' : 5 eleves x 3 matieres.",
+            "pratique": "Decouvrir =SOMME() et =MOYENNE()."
+          },
+          {
+            "numero": 16,
+            "titre": "Excel : formules",
+            "objectifs": "=SOMME, =MOYENNE, =MAX, =MIN Copier une formule",
+            "notions": "Formule commence par =. On la copie en tirant le coin.",
+            "exercice": "Ajoute Moyenne, Max, Min au tableau de notes.",
+            "pratique": "Tableau de depenses avec total et moyenne."
+          },
+          {
+            "numero": 17,
+            "titre": "Excel : graphiques",
+            "objectifs": "Batons et secteurs Visualiser les donnees",
+            "notions": "Selection > Insertion > Graphique.",
+            "exercice": "Graphique en batons des notes + camembert filles/garsons.",
+            "pratique": "Sondage en classe + graphiques."
+          },
+          {
+            "numero": 18,
+            "titre": "Internet : cyberharcelement",
+            "objectifs": "Reconnaitre et reagir 3018 = numero gratuit",
+            "notions": "Messages mechants repetes = harcelement. En parler, bloquer, signaler.",
+            "exercice": "Affiche 'Stop cyberharcelement' avec les 4 reflexes.",
+            "pratique": "Debat : reseaux sociaux a 10 ans ?"
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 3",
+            "description": "Presentation 6 diapos : theme, transitions, 3 images, 1 SmartArt, 1 graphique."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 4",
+            "description": "Tableur : 10 produits, prix, quantite, total, somme, graphique."
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "label": "Trimestre 3",
+        "matiere": "CM1",
+        "color": "#6A1B9A",
+        "lessons": [
+          {
+            "numero": 19,
+            "titre": "Initiation programmation",
+            "objectifs": "Algorithme = suite d'instructions Ecrire un algorithme",
+            "notions": "Comme une recette de cuisine mais plus rigoureux !",
+            "exercice": "Algorithme detaille 'Preparer un jus d'orange' (8 etapes).",
+            "pratique": "Algorithmes pour actions quotidiennes."
+          },
+          {
+            "numero": 20,
+            "titre": "Scratch : decouverte",
+            "objectifs": "scratch.mit.edu Creer un compte",
+            "notions": "Scratch = programmation visuelle par blocs. Gratuit en ligne.",
+            "exercice": "Cree un compte Scratch. Explore les categories de blocs.",
+            "pratique": "Suivre le tutoriel Scratch officiel."
+          },
+          {
+            "numero": 21,
+            "titre": "Scratch : mouvements",
+            "objectifs": "Drapeau vert Avancer, tourner",
+            "notions": "Evenements declenchent. Mouvements deplacent.",
+            "exercice": "Fais avancer le chat 100 pas, tourne 90, avance 50.",
+            "pratique": "Explorer tous les blocs de mouvement."
+          },
+          {
+            "numero": 22,
+            "titre": "Scratch : apparences/sons",
+            "objectifs": "'dire' et 'penser' Jouer un son",
+            "notions": "Apparence (violet) change l'aspect. Son (rose) joue des bruits.",
+            "exercice": "Fais dire 'Bonjour !' au chat. Ajoute un Miaou.",
+            "pratique": "Mini-dialogue entre 2 sprites."
+          },
+          {
+            "numero": 23,
+            "titre": "Scratch : boucles",
+            "objectifs": "'repeter 10 fois' 'repeter indefiniment'",
+            "notions": "Les boucles repetent sans reecrire.",
+            "exercice": "Carre avec 'repeter 4 : avancer 100, tourner 90'.",
+            "pratique": "Triangle, pentagone, hexagone avec boucles."
+          },
+          {
+            "numero": 24,
+            "titre": "Scratch : premier jeu",
+            "objectifs": "Deplacement aux fleches Objectif a atteindre",
+            "notions": "Jeu simple : sprite controle, objet a toucher.",
+            "exercice": "Cree un jeu : le chat attrape des etoiles.",
+            "pratique": "Ajouter un score."
+          },
+          {
+            "numero": 25,
+            "titre": "Projet final",
+            "objectifs": "Sujet au choix Word + PowerPoint + Scratch",
+            "notions": "Projet complet integrant les 3 outils sur le meme theme.",
+            "exercice": "Choisis ton sujet. Commence le projet.",
+            "pratique": "Avancer chaque semaine."
+          },
+          {
+            "numero": 26,
+            "titre": "Finaliser le projet",
+            "objectifs": "Relire, corriger, ameliorer Répéter la presentation",
+            "notions": "Derniere ligne droite.",
+            "exercice": "Finalise ton projet. Fais-le tester.",
+            "pratique": "Répétition en conditions reelles."
+          },
+          {
+            "numero": 27,
+            "titre": "Bilan CM1",
+            "objectifs": "Auto-evaluation Presenter son projet",
+            "notions": "Competences : Word, PowerPoint, Excel, Scratch, recherche, presentations.",
+            "exercice": "Presente ton projet en 5 min. Remplis la grille.",
+            "pratique": "Exposition des projets !"
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 5",
+            "description": "Projet integre (Word + PowerPoint + Scratch) sur le theme de ton choix."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 6",
+            "description": "Oral 5 min + QCM 15 questions (Word, Excel, Internet, Scratch)."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "classe": "CM2",
+    "matiere": "CM2",
+    "trimestres": [
+      {
+        "numero": 1,
+        "label": "Trimestre 1",
+        "matiere": "CM2",
+        "color": "#1B5E20",
+        "lessons": [
+          {
+            "numero": 1,
+            "titre": "Securite en ligne",
+            "objectifs": "Phishing = faux message Reconnaitre les signes",
+            "notions": "Fautes, urgence, lien suspect = signes de phishing.",
+            "exercice": "Analyse 3 messages (vrais/faux). Trouve les indices.",
+            "pratique": "Guide 'Les 7 signes du phishing'."
+          },
+          {
+            "numero": 2,
+            "titre": "Reseaux sociaux",
+            "objectifs": "Parametres confidentialite Empreinte numerique",
+            "notions": "Tout ce qu'on publie peut etre vu, copie, diffuse.",
+            "exercice": "Verifie les parametres de confidentialite. Liste 3 choses a ne jamais publier.",
+            "pratique": "Debat : a quel age un compte reseau social ?"
+          },
+          {
+            "numero": 3,
+            "titre": "Cyberharcelement",
+            "objectifs": "Formes de harcelement Numero 3018",
+            "notions": "Penalement punissable. En parler est la 1ere chose a faire.",
+            "exercice": "Redige un protocole 'Que faire ?' en 5 etapes.",
+            "pratique": "Campagne de sensibilisation pour l'ecole."
+          },
+          {
+            "numero": 4,
+            "titre": "Scratch : conditions",
+            "objectifs": "'si... alors... sinon' Programmer une decision",
+            "notions": "Les conditions permettent au programme de faire des choix.",
+            "exercice": "Si fleche droite pressee, avancer. Sinon, reculer.",
+            "pratique": "Feu tricolore dans Scratch."
+          },
+          {
+            "numero": 5,
+            "titre": "Scratch : capteurs",
+            "objectifs": "'touche pressee?', 'couleur touchee?' Interactions",
+            "notions": "Les capteurs detectent l'environnement.",
+            "exercice": "Sprite change de couleur au bord. Detecte un obstacle.",
+            "pratique": "Labyrinthe simple."
+          },
+          {
+            "numero": 6,
+            "titre": "Scratch : variables",
+            "objectifs": "Creer score, vies, chrono Afficher et modifier",
+            "notions": "Variable = boite qui stocke une valeur changeante.",
+            "exercice": "Ajoute score et chrono au labyrinthe.",
+            "pratique": "Jeu complet avec score, vies, chrono."
+          },
+          {
+            "numero": 7,
+            "titre": "Scratch : clones",
+            "objectifs": "Creer des clones 'quand je commence comme un clone'",
+            "notions": "Les clones = copies temporaires du sprite.",
+            "exercice": "Jeu de tir : clones tombent du ciel, on clique dessus.",
+            "pratique": "Ajouter differents types d'ennemis."
+          },
+          {
+            "numero": 8,
+            "titre": "Scratch : messages",
+            "objectifs": "Envoyer/recevoir entre sprites Coordonner plusieurs sprites",
+            "notions": "Les messages permettent aux sprites de communiquer.",
+            "exercice": "3 sprites : clic sur 1er > message au 2e > message au 3e.",
+            "pratique": "Choregraphie de 3 sprites."
+          },
+          {
+            "numero": 9,
+            "titre": "Scratch : platformer",
+            "objectifs": "Gravite et saut Collisions",
+            "notions": "Sprite qui saute de plateforme en plateforme.",
+            "exercice": "Cree un platformer simple : 3 plateformes, drapeau arrivee.",
+            "pratique": "Ennemis mobiles et bonus."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 1",
+            "description": "Jeu Scratch complet : sprite jouable, objets, score, vies, victoire. Partage le projet."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 2",
+            "description": "QCM 10 questions securite + message pour expliquer a un ami la protection des donnees."
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "label": "Trimestre 2",
+        "matiere": "CM2",
+        "color": "#1565C0",
+        "lessons": [
+          {
+            "numero": 10,
+            "titre": "HTML : premier fichier",
+            "objectifs": "Creer index.html Bonjour",
+            "notions": "HTML = langage qui structure les pages web. Balises entre .",
+            "exercice": "Cree index.html avec Bonjour . Ouvre dans le navigateur.",
+            "pratique": "Modifier et recharger."
+          },
+          {
+            "numero": 11,
+            "titre": "HTML : structure",
+            "objectifs": ", , ,",
+            "notions": "Toute page a une structure minimale.",
+            "exercice": "Cree la structure complete avec titre et h1.",
+            "pratique": "Valider avec le validateur W3C."
+          },
+          {
+            "numero": 12,
+            "titre": "HTML : titres et paragraphes",
+            "objectifs": "a , Structurer le contenu",
+            "notions": "h1 = titre principal. p = paragraphe.",
+            "exercice": "Page 'Mon film prefere' avec h1, h2, 2 paragraphes.",
+            "pratique": "Page 'Ma famille' avec un titre par membre."
+          },
+          {
+            "numero": 13,
+            "titre": "HTML : liens et images",
+            "objectifs": ", Navigation et medias",
+            "notions": "a = ancre (lien). img = image (pas fermante).",
+            "exercice": "Ajoute un lien Wikipedia et une image a ta page.",
+            "pratique": "Page 'Mes 5 sites preferes'."
+          },
+          {
+            "numero": 14,
+            "titre": "HTML : listes",
+            "objectifs": "et Puces et numeros",
+            "notions": "ul = unordered. ol = ordered. li = element.",
+            "exercice": "Liste a puces de tes hobbies. Liste numerotee de 5 films.",
+            "pratique": "Menu de restaurant en HTML."
+          },
+          {
+            "numero": 15,
+            "titre": "CSS : premieres regles",
+            "objectifs": ", couleur fond, police Embellir le HTML",
+            "notions": "CSS rend la page jolie.",
+            "exercice": "Ajoute fond colore, change police et couleur du texte.",
+            "pratique": "3 versions de la meme page avec styles differents."
+          },
+          {
+            "numero": 16,
+            "titre": "CSS : bordures et espacement",
+            "objectifs": "margin, padding, border Creer des cartes",
+            "notions": "margin = exterieur, padding = interieur, border = bordure.",
+            "exercice": "Cree une 'carte' avec bordure, coins arrondis, fond blanc.",
+            "pratique": "Galerie de cartes."
+          },
+          {
+            "numero": 17,
+            "titre": "Algorithmique : organigrammes",
+            "objectifs": "Ovale, rectangle, losange Sequence, condition, boucle",
+            "notions": "Organigramme = representation visuelle.",
+            "exercice": "Dessine l'organigramme 'Faire ses devoirs'.",
+            "pratique": "Organigramme d'un jeu."
+          },
+          {
+            "numero": 18,
+            "titre": "Tri et recherche",
+            "objectifs": "Tri par insertion a la main Recherche dans une liste",
+            "notions": "On insere chaque element a sa place.",
+            "exercice": "Trie [7,3,9,1,5] par insertion. Cherche 9.",
+            "pratique": "Visualiser le tri dans Scratch."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 3",
+            "description": "Page web complete : structure correcte, titres, paragraphes, 2 images, 1 liste, 1 lien, CSS colore."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 4",
+            "description": "Algorithme 'se connecter' + organigramme + expliquer le tri par insertion."
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "label": "Trimestre 3",
+        "matiere": "CM2",
+        "color": "#6A1B9A",
+        "lessons": [
+          {
+            "numero": 19,
+            "titre": "CSS : Google Fonts",
+            "objectifs": "Ajouter une police web Palette de couleurs",
+            "notions": "Google Fonts = centaines de polices gratuites.",
+            "exercice": "Ajoute une Google Font. Cree une palette 3 couleurs.",
+            "pratique": "Redesigner sa page."
+          },
+          {
+            "numero": 20,
+            "titre": "CSS : Flexbox",
+            "objectifs": "display:flex Aligner et espacer",
+            "notions": "Flexbox gere l'alignement sur un axe.",
+            "exercice": "Barre de navigation horizontale avec 4 liens.",
+            "pratique": "Page portfolio."
+          },
+          {
+            "numero": 21,
+            "titre": "HTML : tableau",
+            "objectifs": ", , , Structurer des donnees",
+            "notions": "Tableaux pour donnees tabulaires.",
+            "exercice": "Tableau 5 pays : Pays, Capitale, Population, Langue.",
+            "pratique": "Styliser le tableau (zebrage, survol)."
+          },
+          {
+            "numero": 22,
+            "titre": "Mini-site web",
+            "objectifs": "3 pages liees CSS partage",
+            "notions": "Un site = plusieurs .html liees par .",
+            "exercice": "Cree 3 pages : Accueil, A propos, Contact. Lie-les.",
+            "pratique": "Heberger sur GitHub Pages."
+          },
+          {
+            "numero": 23,
+            "titre": "Robotique debranchee",
+            "objectifs": "Programmer un 'robot' humain Instructions precises",
+            "notions": "Un eleve joue le robot, l'autre programme.",
+            "exercice": "Par 2 : traverser la classe en evitant des obstacles.",
+            "pratique": "Parcours avec boucles."
+          },
+          {
+            "numero": 24,
+            "titre": "Projet site web",
+            "objectifs": "Sujet au choix 4 pages + CSS",
+            "notions": "Projet final : site web complet.",
+            "exercice": "Cree la structure (4 fichiers + CSS). Page d'accueil.",
+            "pratique": "Tests utilisateurs."
+          },
+          {
+            "numero": 25,
+            "titre": "Finaliser le site",
+            "objectifs": "Contenu et images Peaufiner le CSS",
+            "notions": "Ajouter du contenu de qualite et un design soigne.",
+            "exercice": "Termine les 4 pages. Relis, corrige.",
+            "pratique": "Tester sur mobile et tablette."
+          },
+          {
+            "numero": 26,
+            "titre": "Presentations",
+            "objectifs": "Demo 3 min Expliquer ses choix",
+            "notions": "Montrer le site, expliquer le HTML/CSS.",
+            "exercice": "Prepare ta demo. Entraine-toi.",
+            "pratique": "Répétition en petit groupe."
+          },
+          {
+            "numero": 27,
+            "titre": "Bilan CM2",
+            "objectifs": "Auto-evaluation Preparer le college",
+            "notions": "Competences : securite, Scratch avance, HTML/CSS, algorithmique, projet web.",
+            "exercice": "Complete la grille. Note 3 competences a approfondir en 6e.",
+            "pratique": "Exposition des sites web !"
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 5",
+            "description": "Site web 4 pages : structure HTML, CSS harmonieux, navigation fonctionnelle."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 6",
+            "description": "Presente ton site 3 min + montre ton meilleur projet Scratch."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "classe": "CP",
+    "matiere": "CP",
+    "trimestres": [
+      {
+        "numero": 1,
+        "label": "Trimestre 1",
+        "matiere": "CP",
+        "color": "#1B5E20",
+        "lessons": [
+          {
+            "numero": 1,
+            "titre": "Qu'est-ce qu'un ordinateur ?",
+            "objectifs": "Identifier un ordinateur Nommer ecran, clavier, souris",
+            "notions": "Machine qui affiche, ecrit et calcule. 3 parties visibles : ecran (affiche), clavier (ecrire), souris (cliquer).",
+            "exercice": "Montre l'ecran, le clavier et la souris et explique leur role.",
+            "pratique": "A la maison : comparer un ordinateur avec une tablette ou un telephone."
+          },
+          {
+            "numero": 2,
+            "titre": "Allumer l'ordinateur",
+            "objectifs": "Trouver le bouton d'allumage Attendre le demarrage",
+            "notions": "Bouton marche/arret rond. Ne pas debrancher. L'ecran s'allume apres quelques secondes.",
+            "exercice": "Allume l'ordinateur et observe l'ecran de demarrage.",
+            "pratique": "Chronometrer le temps de demarrage. Comparer avec un camarade."
+          },
+          {
+            "numero": 3,
+            "titre": "Eteindre correctement",
+            "objectifs": "Demarrer > Arreter Ne pas debrancher !",
+            "notions": "Toujours passer par Demarrer > Arreter. Ne jamais eteindre en forcant le bouton.",
+            "exercice": "Eteins puis rallume l'ordinateur 3 fois correctement.",
+            "pratique": "Creer une affiche illustree 'Comment allumer et eteindre l'ordinateur'."
+          },
+          {
+            "numero": 4,
+            "titre": "La souris : deplacer le curseur",
+            "objectifs": "Tenir la souris Deplacer le curseur a l'ecran",
+            "notions": "Le curseur (petite fleche) est notre main a l'ecran. On le controle avec la souris.",
+            "exercice": "Deplace le curseur dans les 4 coins de l'ecran, puis trace un carre imaginaire.",
+            "pratique": "Jeu : suivre un labyrinthe dessine sur papier avec le curseur."
+          },
+          {
+            "numero": 5,
+            "titre": "La souris : clic gauche",
+            "objectifs": "Appuyer une fois (clic) Selectionner un element",
+            "notions": "Le clic gauche selectionne. L'icone change de couleur quand elle est selectionnee.",
+            "exercice": "Clique sur 5 icones differentes du Bureau.",
+            "pratique": "Jeu de rapidite : un camarade nomme une icone, tu cliques dessus."
+          },
+          {
+            "numero": 6,
+            "titre": "La souris : double-clic",
+            "objectifs": "2 clics rapides Ouvrir un programme",
+            "notions": "Double-clic = 2 clics rapides sans bouger la souris. Cela OUVRE le programme.",
+            "exercice": "Ouvre Paint en double-cliquant. Ferme-le. Repete 5 fois.",
+            "pratique": "Ouvre et ferme 3 programmes (Paint, Bloc-Notes, Calculatrice)."
+          },
+          {
+            "numero": 7,
+            "titre": "La souris : clic droit",
+            "objectifs": "Faire un clic droit Decouvrir le menu contextuel",
+            "notions": "Le clic droit ouvre un petit menu avec des options utiles.",
+            "exercice": "Fais clic droit sur le Bureau vide, puis sur une icone. Compare les menus.",
+            "pratique": "Explorer le menu clic droit sur 5 elements differents."
+          },
+          {
+            "numero": 8,
+            "titre": "Le clavier : les lettres",
+            "objectifs": "Reconnaitre A-Z Taper son prenom",
+            "notions": "Les lettres sont en AZERTY. Chaque touche correspond a une lettre.",
+            "exercice": "Ouvre le Bloc-Notes et tape ton prenom. Puis 3 prenoms de camarades.",
+            "pratique": "Taper l'alphabet A-Z le plus vite possible. Chronometrer."
+          },
+          {
+            "numero": 9,
+            "titre": "Le clavier : touches speciales",
+            "objectifs": "Entree, Espace, Retour arriere Corriger une erreur",
+            "notions": "Entree = nouvelle ligne. Espace = entre les mots. Retour = efface.",
+            "exercice": "Tape : Bonjour[Espace]je[Espace]m'appelle[Espace]prenom[Entree]J'ai[Espace]age[Espace]ans.",
+            "pratique": "Dictee numerique : un camarade dicte, tu tapes."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 1 : Connaissances",
+            "description": "Reponds a l'oral : nomme les 3 parties de l'ordinateur et leur role. Explique comment allumer et eteindre. Note /10."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 2 : Pratique",
+            "description": "Allume l'ordinateur, ouvre Paint, tape ton prenom dans le Bloc-Notes, ferme tout, eteins. Note /10."
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "label": "Trimestre 2",
+        "matiere": "CP",
+        "color": "#1565C0",
+        "lessons": [
+          {
+            "numero": 10,
+            "titre": "Decouvrir Paint",
+            "objectifs": "Ouvrir Paint Reperer les outils",
+            "notions": "Paint = logiciel gratuit de dessin. Barre d'outils en haut, feuille blanche au centre.",
+            "exercice": "Explore Paint. Nomme chaque outil (pinceau, gomme, pot de peinture).",
+            "pratique": "Dessiner des lignes, vagues, spirales avec le pinceau."
+          },
+          {
+            "numero": 11,
+            "titre": "Dessiner des formes",
+            "objectifs": "Rectangle, Ellipse, Triangle Tracer des formes",
+            "notions": "On choisit une forme dans la barre d'outils puis on la trace en maintenant le clic.",
+            "exercice": "Dessine : 1 carre rouge, 1 cercle bleu, 1 triangle vert, 1 rectangle jaune.",
+            "pratique": "Creer un bonhomme : cercle (tete), rectangle (corps), 4 traits (bras/jambes)."
+          },
+          {
+            "numero": 12,
+            "titre": "Les couleurs",
+            "objectifs": "Choisir une couleur Remplir avec le pot de peinture",
+            "notions": "La palette montre toutes les couleurs. Le pot de peinture remplit une zone fermee.",
+            "exercice": "Dessine 3 cercles. Remplis-les en rouge, bleu et jaune.",
+            "pratique": "Creer un drapeau tricolore de ton pays."
+          },
+          {
+            "numero": 13,
+            "titre": "La gomme et Ctrl+Z",
+            "objectifs": "Utiliser la gomme Annuler avec Ctrl+Z",
+            "notions": "La gomme efface comme sur du papier. Ctrl+Z annule la derniere action.",
+            "exercice": "Dessine, efface une partie, puis annule une erreur avec Ctrl+Z.",
+            "pratique": "Jeu : dessiner un animal, un camarade efface une partie et la redessine."
+          },
+          {
+            "numero": 14,
+            "titre": "Ecrire dans Paint",
+            "objectifs": "Outil Texte (A) Taper un mot sur le dessin",
+            "notions": "L'outil Texte permet d'ecrire directement sur le dessin.",
+            "exercice": "Dessine un soleil et ecris 'SOLEIL'. Dessine une fleur et ecris 'FLEUR'.",
+            "pratique": "Creer une carte 'Bonne fete Maman' avec dessin + texte."
+          },
+          {
+            "numero": 15,
+            "titre": "Enregistrer son dessin",
+            "objectifs": "Fichier > Enregistrer Donner un nom et choisir le Bureau",
+            "notions": "Enregistrer = garder pour retrouver plus tard. Donner un nom clair.",
+            "exercice": "Dessine un paysage, enregistre-le sur le Bureau sous 'paysage'. Verifie.",
+            "pratique": "Creer un dossier 'Mes dessins' et y ranger tous ses dessins."
+          },
+          {
+            "numero": 16,
+            "titre": "Le Bloc-Notes",
+            "objectifs": "Ouvrir le Bloc-Notes Taper plusieurs phrases",
+            "notions": "Le Bloc-Notes est un editeur de texte simple. Pas de mise en forme.",
+            "exercice": "Ecris 3 phrases sur ton animal prefere. Utilise Entree et Espace.",
+            "pratique": "Tenir un mini-journal : chaque jour, 1 phrase sur sa journee."
+          },
+          {
+            "numero": 17,
+            "titre": "Majuscules avec Shift",
+            "objectifs": "Shift + lettre = MAJUSCULE Activer/desactiver Verr.Maj",
+            "notions": "Shift pour une majuscule. Verr.Maj pour TOUT EN MAJUSCULES.",
+            "exercice": "Tape ton prenom, ton ecole, ta ville avec les bonnes majuscules.",
+            "pratique": "Dictee de 10 noms propres (pays, villes, prenoms)."
+          },
+          {
+            "numero": 18,
+            "titre": "Revision et consolidation",
+            "objectifs": "Revoir toutes les competences Identifier points forts et faibles",
+            "notions": "Bilan : souris, clavier, Paint, Bloc-Notes, enregistrement.",
+            "exercice": "Dessine 'Ma journee preferee' + ecris 3 phrases dans le Bloc-Notes.",
+            "pratique": "Auto-evaluation : 3 choses reussies, 1 a ameliorer."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 3 : Dessin",
+            "description": "Dans Paint, dessine une maison avec porte, 2 fenetres, toit, soleil, arbre. 5 couleurs minimum. Enregistre. Note /10."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 4 : Texte",
+            "description": "Dans le Bloc-Notes, ecris 3 phrases sur ton ecole. Majuscules, espaces, Entree. Enregistre. Note /10."
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "label": "Trimestre 3",
+        "matiere": "CP",
+        "color": "#6A1B9A",
+        "lessons": [
+          {
+            "numero": 19,
+            "titre": "Le Bureau de l'ordinateur",
+            "objectifs": "Reconnaitre le Bureau Organiser les icones",
+            "notions": "Le Bureau = ecran d'accueil. Les icones representent programmes et fichiers.",
+            "exercice": "Aligne les icones sur la gauche. Nomme 5 icones.",
+            "pratique": "Personnaliser le fond d'ecran (clic droit > Personnaliser)."
+          },
+          {
+            "numero": 20,
+            "titre": "Creer un dossier",
+            "objectifs": "Clic droit > Nouveau > Dossier Donner un nom",
+            "notions": "Un dossier = une pochette pour ranger des fichiers.",
+            "exercice": "Cree 3 dossiers : 'Ecole', 'Dessins', 'Textes'.",
+            "pratique": "Organiser tous ses fichiers de l'annee dans ces dossiers."
+          },
+          {
+            "numero": 21,
+            "titre": "Deplacer des fichiers",
+            "objectifs": "Glisser-deposer Retrouver un fichier",
+            "notions": "Pour deplacer : cliquer-maintenir-glisser vers le dossier-lacher.",
+            "exercice": "Deplace 3 dessins dans le dossier 'Dessins'. Verifie.",
+            "pratique": "Grand rangement de fin d'annee."
+          },
+          {
+            "numero": 22,
+            "titre": "La Corbeille",
+            "objectifs": "Supprimer un fichier Restaurer depuis la Corbeille",
+            "notions": "Les fichiers supprimes vont dans la Corbeille. On peut les recuperer !",
+            "exercice": "Supprime un fichier test, puis restaure-le.",
+            "pratique": "Menage : vider la Corbeille apres verification."
+          },
+          {
+            "numero": 23,
+            "titre": "L'Explorateur de fichiers",
+            "objectifs": "Ouvrir (icone dossier jaune) Naviguer dans les dossiers",
+            "notions": "L'Explorateur montre tous les fichiers et dossiers de l'ordinateur.",
+            "exercice": "Trouve les dossiers Images, Documents, Bureau dans l'Explorateur.",
+            "pratique": "Explorer son ordinateur (sans rien modifier !)."
+          },
+          {
+            "numero": 24,
+            "titre": "Projet complet : dessin",
+            "objectifs": "Planifier un dessin Utiliser tous les outils",
+            "notions": "Avant de dessiner : quel sujet ? quelles couleurs ? quelles formes ?",
+            "exercice": "Dessine un zoo avec 5 animaux differents. 6 couleurs minimum.",
+            "pratique": "Exposition des dessins dans la classe."
+          },
+          {
+            "numero": 25,
+            "titre": "Ecrire une histoire",
+            "objectifs": "Planifier un texte Taper et corriger",
+            "notions": "1) Choisir le sujet, 2) Ecrire 3-5 phrases, 3) Relire et corriger.",
+            "exercice": "Ecris une courte histoire (5 phrases) dans le Bloc-Notes.",
+            "pratique": "Illustrer l'histoire avec un dessin Paint."
+          },
+          {
+            "numero": 26,
+            "titre": "Projet final",
+            "objectifs": "Combiner texte + dessin Presenter a l'oral",
+            "notions": "Projet de fin d'annee : 1 dessin + 1 texte sur le meme sujet.",
+            "exercice": "Realise ton projet final. Enregistre tout dans un dossier 'Projet-CP'.",
+            "pratique": "S'entrainer a presenter en 2 minutes."
+          },
+          {
+            "numero": 27,
+            "titre": "Bilan de l'annee CP",
+            "objectifs": "Reviser toutes les competences Auto-evaluer ses progres",
+            "notions": "Competences CP : allumer/eteindre, souris (clic, double-clic, droit), clavier (lettres, touches speciales, Shift), Paint, enregistrer, dossiers.",
+            "exercice": "Liste tout ce que tu as appris. Vert = maitrise, Orange = a travailler.",
+            "pratique": "Exposition des travaux aux parents."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 5 : Organisation",
+            "description": "Cree un dossier 'Examen-CP'. Dedans : 1 dessin Paint + 1 texte Bloc-Notes. Montre supprimer/restaurer. Note /10."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 6 : Projet final",
+            "description": "Presente ton projet final en 2 minutes. Explique ce que tu as fait et comment. Note /10."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "classe": "TLE",
+    "matiere": "Tle",
+    "trimestres": [
+      {
+        "numero": 1,
+        "label": "Trimestre 1",
+        "matiere": "Tle",
+        "color": "#7B1FA2",
+        "lessons": [
+          {
+            "numero": 1,
+            "titre": "Architectures paralleles",
+            "objectifs": "Multicoeur, GPU SIMD/MIMD",
+            "notions": "CPU vs GPU.",
+            "exercice": "Explique difference CPU/GPU. Calcul parallele.",
+            "pratique": "Multiprocessing Python."
+          },
+          {
+            "numero": 2,
+            "titre": "Complexite",
+            "objectifs": "O(n), Omega(n), Theta(n) Pire cas, cas moyen",
+            "notions": "Notation asymptotique.",
+            "exercice": "Analyse 10 algorithmes. Classe par efficacite.",
+            "pratique": "Theoreme du maitre (recursif)."
+          },
+          {
+            "numero": 3,
+            "titre": "Diviser pour regner",
+            "objectifs": "Tri fusion, quicksort Recurrence",
+            "notions": "Diviser, resoudre, combiner.",
+            "exercice": "Tour de Hanoi. Multiplication matrices (Strassen).",
+            "pratique": "Closest pair."
+          },
+          {
+            "numero": 4,
+            "titre": "Programmation dynamique",
+            "objectifs": "Sac a dos Plus longue sous-sequence",
+            "notions": "Decomposer+stocker+construire.",
+            "exercice": "Sac a dos 0/1 et fractionnaire. Levenshtein.",
+            "pratique": "Floyd-Warshall."
+          },
+          {
+            "numero": 5,
+            "titre": "Graphes",
+            "objectifs": "BFS, DFS Dijkstra, A*",
+            "notions": "Plus court chemin.",
+            "exercice": "Implemente Dijkstra et A*. Compare.",
+            "pratique": "Analyser perf Dijkstra vs A*."
+          },
+          {
+            "numero": 6,
+            "titre": "Tas et hachage",
+            "objectifs": "Tas binaire Table de hachage",
+            "notions": "File de priorite. Cle->valeur O(1).",
+            "exercice": "Implemente tas. Table hachage cle-valeur.",
+            "pratique": "ABR vs table hachage."
+          },
+          {
+            "numero": 7,
+            "titre": "Compression",
+            "objectifs": "Codage de Huffman LZW (principe)",
+            "notions": "Reduit la taille des donnees.",
+            "exercice": "Implemente Huffman. Compresse/decompresse texte.",
+            "pratique": "Analyser taux compression."
+          },
+          {
+            "numero": 8,
+            "titre": "Projet algorithmique",
+            "objectifs": "Implementer algo avance Comparer approches",
+            "notions": "Brute force vs DP vs diviser pour regner.",
+            "exercice": "2 solutions meme probleme. Compare perfs.",
+            "pratique": "Rapport comparatif."
+          },
+          {
+            "numero": 9,
+            "titre": "Revision et entrainement",
+            "objectifs": "QCM blanc Exercices complexite",
+            "notions": "Revision complete.",
+            "exercice": "3 sujets blancs. Correction groupe.",
+            "pratique": "Identifier lacunes."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 1",
+            "description": "Analyse complexite 5 algos. Implemente Dijkstra. Sac a dos DP. Question cours (diviser pour regner, graphes)."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 2",
+            "description": "Implemente Huffman + algo graphe au choix. Compare performances."
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "label": "Trimestre 2",
+        "matiere": "Tle",
+        "color": "#1565C0",
+        "lessons": [
+          {
+            "numero": 10,
+            "titre": "HTTP",
+            "objectifs": "Methodes, codes status, en-tetes Cookies, sessions, CORS",
+            "notions": "HTTP/1.1 vs 2 vs 3.",
+            "exercice": "Capture requetes HTTP outils dev.",
+            "pratique": "Serveur HTTP minimal Python."
+          },
+          {
+            "numero": 11,
+            "titre": "Securite web",
+            "objectifs": "XSS, CSRF, injection SQL OWASP Top 10",
+            "notions": "Failles les plus exploitees.",
+            "exercice": "Demo injection SQL sur app vulnerable. Correction.",
+            "pratique": "Auditer son projet."
+          },
+          {
+            "numero": 12,
+            "titre": "Authentification",
+            "objectifs": "JWT (JSON Web Tokens) OAuth2 (principe)",
+            "notions": "Token signe. Delegation Google/Facebook.",
+            "exercice": "Implemente auth JWT API Flask.",
+            "pratique": "Login with Google."
+          },
+          {
+            "numero": 13,
+            "titre": "NoSQL",
+            "objectifs": "Redis (cle-valeur) MongoDB (documents)",
+            "notions": "Pas de schema fixe, scalable.",
+            "exercice": "Installe/utilise Redis et MongoDB.",
+            "pratique": "Choisir SQL vs NoSQL."
+          },
+          {
+            "numero": 14,
+            "titre": "Linux avance",
+            "objectifs": "grep, find, pipes, redirections Processus et droits",
+            "notions": "Commandes puissantes.",
+            "exercice": "Script bash deploiement automatique.",
+            "pratique": "Explorer fichiers config Linux."
+          },
+          {
+            "numero": 15,
+            "titre": "Reseaux Linux",
+            "objectifs": "Configurer interface iptables et NAT",
+            "notions": "En ligne de commande.",
+            "exercice": "Configure interface reseau. Test connectivite.",
+            "pratique": "Serveur local DNS+DHCP."
+          },
+          {
+            "numero": 16,
+            "titre": "DevOps",
+            "objectifs": "CI/CD GitHub Actions",
+            "notions": "Automatiser build, tests, deploiement.",
+            "exercice": "Pipeline CI/CD sur GitHub Actions.",
+            "pratique": "Deploiement automatique push."
+          },
+          {
+            "numero": 17,
+            "titre": "Veille et innovation",
+            "objectifs": "Techno emergente Analyser impact",
+            "notions": "WebAssembly, Edge Computing, blockchain...",
+            "exercice": "Choisis techno. Veille 3 sources. Presente 5 min.",
+            "pratique": "Debat : impact dans 5 ans."
+          },
+          {
+            "numero": 18,
+            "titre": "Projet 2e trimestre",
+            "objectifs": "Web securise + BDD + CI/CD Jalons",
+            "notions": "Application complete.",
+            "exercice": "Lance projet. Configure CI/CD.",
+            "pratique": "Code review mi-parcours."
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 3",
+            "description": "API REST securisee (JWT, validation, CORS) avec BDD. Test securite OWASP."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 4",
+            "description": "Exercices Linux (terminal, scripts). QCM BDD, NoSQL, protocoles web."
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "label": "Trimestre 3",
+        "matiere": "Tle",
+        "color": "#6A1B9A",
+        "lessons": [
+          {
+            "numero": 19,
+            "titre": "ML : fondamentaux",
+            "objectifs": "Regression lineaire/logistique Surapprentissage, regularisation",
+            "notions": "Predire valeur continue ou categorie.",
+            "exercice": "Regression lineaire dataset simple. Visualise courbe.",
+            "pratique": "Lutter surapprentissage (L1/L2)."
+          },
+          {
+            "numero": 20,
+            "titre": "ML : arbres et forets",
+            "objectifs": "Arbre decision Random Forest",
+            "notions": "Partitionne en posant des questions.",
+            "exercice": "Random Forest. Analyse importance features.",
+            "pratique": "Comparer regression logistique vs RF."
+          },
+          {
+            "numero": 21,
+            "titre": "Deep Learning",
+            "objectifs": "Perceptron multi-couche Keras/PyTorch",
+            "notions": "Reseau profond = plusieurs couches cachees.",
+            "exercice": "Reseau neurones Keras pour MNIST (chiffres).",
+            "pratique": "Visualiser activations couches."
+          },
+          {
+            "numero": 22,
+            "titre": "NLP/Transformers",
+            "objectifs": "Analyse de sentiment Mecanisme d'attention",
+            "notions": "Transformers (2017) ont revolutionne le NLP.",
+            "exercice": "Modele Hugging Face pour sentiment analysis.",
+            "pratique": "Fine-tuner modele petit dataset."
+          },
+          {
+            "numero": 23,
+            "titre": "Ethique de l'IA",
+            "objectifs": "Biais, equite, explicabilite AI Act europeen",
+            "notions": "Biais dans donnees = biais decisions.",
+            "exercice": "Analyse cas biais connu. Propose solutions.",
+            "pratique": "Debat : interdire reconnaissance faciale ?"
+          },
+          {
+            "numero": 24,
+            "titre": "Grand Oral",
+            "objectifs": "Choisir un sujet Structurer l'argumentation",
+            "notions": "20 min prepa + 20 min presentation + 10 min echange.",
+            "exercice": "Choisis ton sujet. Plan detaille. Repetitions.",
+            "pratique": "Jury blanc."
+          },
+          {
+            "numero": 25,
+            "titre": "Projet final",
+            "objectifs": "Application complete BDD, web, algorithmique, IA (optionnel)",
+            "notions": "Projet de fin de cycle.",
+            "exercice": "Realise ton projet. Suivi hebdo.",
+            "pratique": "Tests, debug, deploiement."
+          },
+          {
+            "numero": 26,
+            "titre": "Rapport technique",
+            "objectifs": "10-15 pages Contexte, analyse, conception, realisation, tests, conclusion",
+            "notions": "Document professionnel.",
+            "exercice": "Redige ton rapport.",
+            "pratique": "Répétition conditions reelles."
+          },
+          {
+            "numero": 27,
+            "titre": "Bilan Terminale",
+            "objectifs": "Soutenances finales Celebration",
+            "notions": "Competences Terminale completes.",
+            "exercice": "Soutiens ton projet (20 min). Bilan competences.",
+            "pratique": "Celebration fin de cycle !"
+          }
+        ],
+        "exams": [
+          {
+            "titre": "&#x1F4CB; Examen 5",
+            "description": "Projet NSI Terminale complet : code, rapport, deploiement. Evaluation tous criteres."
+          },
+          {
+            "titre": "&#x1F4CB; Examen 6",
+            "description": "Bac blanc (3h30) : exercices algorithmique, BDD, architecture, Python. Format Epreuve specialite NSI."
+          }
+        ]
+      }
+    ]
+  }
+]

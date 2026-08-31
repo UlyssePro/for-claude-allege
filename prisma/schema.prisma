@@ -1,0 +1,576 @@
+// ============================================================================
+// SCHEMA PRISMA — HMS-GS
+// Base cible : SQLite (locale)
+// ============================================================================
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// ----------------------------------------------------------------------------
+// AUTH / UTILISATEURS
+// ----------------------------------------------------------------------------
+
+model Role {
+  id    String @id @default(cuid())
+  label String
+
+  users User[]
+
+  @@map("roles")
+}
+
+model User {
+  id       String  @id @default(cuid())
+  username String
+  email    String
+  password String
+  image    String?
+  logged   Boolean @default(false)
+  roleId   String?
+  role     Role?   @relation(fields: [roleId], references: [id])
+
+  resetToken        String?   @unique
+  resetTokenExpires DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  sessionId String?
+
+  elevesHandled    Eleve[]      @relation("EleveHandledBy")
+  enseignantsGeres Enseignant[] @relation("EnseignantHandledBy")
+
+  authSessions AuthSession[]
+
+  @@map("users")
+}
+
+model AuthSession {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String   @unique
+  expires   DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("auth_sessions")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  label     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  eleves      Eleve[]
+  enseignants Enseignant[]
+
+  @@map("sessions")
+}
+
+model Parametre {
+  id     String @id @default(cuid())
+  cle    String @unique
+  valeur String
+
+  @@map("parametres")
+}
+
+// ----------------------------------------------------------------------------
+// STRUCTURE PÉDAGOGIQUE
+// ----------------------------------------------------------------------------
+
+model Matiere {
+  id        String   @id @default(cuid())
+  label     String
+  abrev     String?
+  coeff     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  enseignants         Enseignant[]
+  grillesEmploiTemps  GrilleEmploiTemps[]
+  repartitions        Repartition[]
+  notes               Note[]
+  emploiDuTempsEleves EmploiDuTempsEleve[]
+  trimestres          Trimestre[]
+
+  @@map("matieres")
+}
+
+model ClasseCategorie {
+  id    String @id @default(cuid())
+  label String
+
+  classes     Classe[]
+  enseignants Enseignant[]
+
+  @@map("classes_categories")
+}
+
+model LieuEcole {
+  id    String @id @default(cuid())
+  label String
+  taux  Int?
+
+  classes             Classe[]
+  grillesEmploiTemps  GrilleEmploiTemps[]
+  repartitions        Repartition[]
+  emploiDuTempsEleves EmploiDuTempsEleve[]
+
+  @@map("lieux_ecoles")
+}
+
+model UsualClasse {
+  id      String @id @default(cuid())
+  libelle String
+
+  classes Classe[]
+
+  @@map("usualClasses")
+}
+
+model Classe {
+  id              String           @id @default(cuid())
+  label           String
+  usualClasseId   String?
+  UsualClasse     UsualClasse?     @relation(fields: [usualClasseId], references: [id])
+  categorieId     String?
+  ClasseCategorie ClasseCategorie? @relation(fields: [categorieId], references: [id])
+  lieuId          String?
+  lieuEcole       LieuEcole?       @relation(fields: [lieuId], references: [id])
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  eleves              Eleve[]
+  grillesEmploiTemps  GrilleEmploiTemps[]
+  repartitions        Repartition[]
+  emploiDuTempsEleves EmploiDuTempsEleve[]
+  exercices           Exercice[]
+
+  @@map("classes")
+}
+
+model GenreEleve {
+  id    String @id @default(cuid())
+  label String
+  gen   String
+
+  eleves Eleve[]
+
+  @@map("genres_eleve")
+}
+
+model Enseignant {
+  id        String   @id @default(cuid())
+  nom       String
+  prenom    String
+  contact   String?
+  adresse   String?
+  dpservice String?
+  profSess  String?
+  photo     String?
+  matiereId String?
+  matiere   Matiere? @relation(fields: [matiereId], references: [id])
+
+  categorieId String?
+  categorie   ClasseCategorie? @relation(fields: [categorieId], references: [id])
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  sessionId   String?
+  session     Session? @relation(fields: [sessionId], references: [id])
+
+  handledById String?
+  handledBy   User?   @relation("EnseignantHandledBy", fields: [handledById], references: [id])
+
+  grillesEmploiTemps GrilleEmploiTemps[]
+  repartitions       Repartition[]
+  notes              Note[]
+  trimestres         Trimestre[]
+
+  @@map("enseignants")
+}
+
+// ----------------------------------------------------------------------------
+// ÉLÈVES / NOTES
+// ----------------------------------------------------------------------------
+
+model Eleve {
+  id          String      @id @default(cuid())
+  firstname   String
+  lastname    String
+  dob         String?
+  sob         String?
+  age         String?
+  domic       String?
+  contact     String?
+  numero      String?
+  obs         String?
+  photo       String?
+  anscol      String?
+  classeId    String?
+  classe      Classe?     @relation(fields: [classeId], references: [id])
+  genreId     String?
+  genre       GenreEleve? @relation(fields: [genreId], references: [id])
+  handledById String?
+  handledBy   User?       @relation("EleveHandledBy", fields: [handledById], references: [id])
+
+  sessionId   String?
+  session     Session? @relation(fields: [sessionId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  notes         Note[]
+  emploiDuTemps EmploiDuTempsEleve[]
+  suivis        Suivi[]
+
+  @@map("eleves")
+}
+
+model Note {
+  id      String     @id @default(cuid())
+  eleveId String
+  eleve   Eleve      @relation(fields: [eleveId], references: [id], onDelete: Cascade)
+  profId  String
+  prof    Enseignant @relation(fields: [profId], references: [id])
+
+  matiereId String
+  matiere   Matiere @relation(fields: [matiereId], references: [id])
+  note1     String?
+  note2     String?
+  note3     String?
+  note4     String?
+  note5     String?
+
+  @@map("notes")
+}
+
+// ----------------------------------------------------------------------------
+// EMPLOI DU TEMPS
+// ----------------------------------------------------------------------------
+
+enum StatutPointage {
+  NON_FAIT
+  FAIT
+  VERROUILLE
+}
+
+model GrilleEmploiTemps {
+  id           String         @id @default(cuid())
+  position     Int
+  annee        String?
+  jour         Int?
+  task         String?
+  statut       StatutPointage @default(NON_FAIT)
+  enseignantId String
+  enseignant   Enseignant     @relation(fields: [enseignantId], references: [id])
+  matiereId    String?
+  matiere      Matiere?       @relation(fields: [matiereId], references: [id])
+  classeId     String?
+  classe       Classe?        @relation(fields: [classeId], references: [id])
+  lieuId       String?
+  lieuEcole    LieuEcole?     @relation(fields: [lieuId], references: [id])
+  horaireId    String?
+  date         DateTime?
+
+  emploiDuTempsEleves EmploiDuTempsEleve[]
+
+  @@map("grilles_emploi_temps")
+}
+
+model EmploiDuTempsEleve {
+  id             String             @id @default(cuid())
+  eleveId        String
+  eleve          Eleve              @relation(fields: [eleveId], references: [id], onDelete: Cascade)
+  position       Int
+  date           DateTime?
+  annee          String?
+  jour           Int
+  matiereId      String?
+  matiere        Matiere?           @relation(fields: [matiereId], references: [id])
+  classeId       String?
+  classe         Classe?            @relation(fields: [classeId], references: [id])
+  lieuId         String?
+  lieuEcole      LieuEcole?         @relation(fields: [lieuId], references: [id])
+  horaireId      String?
+  sourceGrilleId String?
+  sourceGrille   GrilleEmploiTemps? @relation(fields: [sourceGrilleId], references: [id])
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+
+  @@map("emploi_du_temps_eleves")
+}
+
+// ----------------------------------------------------------------------------
+// RÉPARTITION HORAIRE
+// ----------------------------------------------------------------------------
+
+model Repartition {
+  id        String         @id @default(cuid())
+  numItem   String?
+  annee     String?
+  monthId   String?
+  day       String?
+  date      DateTime?
+  position  Int?
+  taux      Int?
+  statut    StatutPointage @default(NON_FAIT)
+  matiereId String?
+  matiere   Matiere?       @relation(fields: [matiereId], references: [id])
+
+  enseignantId String?
+  enseignant   Enseignant? @relation(fields: [enseignantId], references: [id])
+
+  classeId    String?
+  classe      Classe?     @relation(fields: [classeId], references: [id])
+  trimestreId String?
+  titreId     String?
+  objectifId  String?
+  notionId    String?
+  exerciceId  String?
+  pratiqueId  String?
+  other       String?
+  task        String?
+  semaineId   String?
+  hourId      String?
+  lieuId      String?
+  lieuEcole   LieuEcole?  @relation(fields: [lieuId], references: [id])
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@map("repartitions")
+}
+
+// ----------------------------------------------------------------------------
+// TRIMESTRES / CAHIERS
+// ----------------------------------------------------------------------------
+
+model Trimestre {
+  id           String      @id @default(cuid())
+  matiereId    String?
+  matiere      Matiere?    @relation(fields: [matiereId], references: [id])
+  enseignantId String
+  enseignant   Enseignant? @relation(fields: [enseignantId], references: [id])
+  classeId     String
+  numero       Int
+  lecon        String
+  examen1      String?
+  examen2      String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  cahiers Cahier[]
+
+  @@map("trimestres")
+}
+
+model Cahier {
+  id          String    @id @default(cuid())
+  trimestreId String
+  trimestre   Trimestre @relation(fields: [trimestreId], references: [id], onDelete: Cascade)
+  titre       Json?
+  objectif    Json?
+  notion      Json?
+  exercice    Json?
+  pratique    Json?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("cahiers")
+}
+
+model Suivi {
+  id             String    @id @default(cuid())
+  eleveId        String
+  eleve          Eleve     @relation(fields: [eleveId], references: [id], onDelete: Cascade)
+  enseignantId   String?
+  type           String    // "lecon" | "exercice" | "note" | "quiz" | "general"
+  resume         String?
+  detail         Json?
+  noteId         String?
+  quizAttemptId  String?
+  exerciceId     String?
+  cahierId       String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@map("suivis")
+}
+
+model Quiz {
+  id           String   @id @default(cuid())
+  question     String
+  reponse      String
+  difficulte   Int?
+  done         Boolean  @default(false)
+  enseignantId String
+  matiereId    String
+  usualClasseId String
+  classe       String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  attempts QuizAttempt[]
+
+  @@map("quizs")
+}
+
+model Exercice {
+  id            String   @id @default(cuid())
+  titre         String
+  consigne      String
+  difficulte    Int       @default(1)
+  classeId      String?
+  classe        Classe?   @relation(fields: [classeId], references: [id])
+  enseignantId  String
+  matiereId     String?
+  dateExercice  DateTime?
+  debloque      Boolean   @default(false)
+  pratiqueId    String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@map("exercices")
+}
+
+model QuizAttempt {
+  id        String   @id @default(cuid())
+  eleveId   String
+  quizId    String
+  quiz      Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  score     Int
+  total     Int
+  answers   Json
+  createdAt DateTime @default(now())
+
+  @@map("quizAttempts")
+}
+
+model QuizActivation {
+  id           String   @id @default(cuid())
+  usualClasseId String   @unique
+  enabled      Boolean  @default(false)
+  updatedAt    DateTime @updatedAt
+
+  @@map("quizActivations")
+}
+
+model ChatMessage {
+  id        String   @id @default(cuid())
+  classeId  String
+  userId    String
+  userName  String
+  userRole  String
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+
+  @@map("chatMessages")
+}
+
+model Media {
+  id          String    @id @default(cuid())
+  title       String
+  description String?
+  type        String    @default("video")
+  url         String
+  thumbnailUrl String?
+  classeId    String
+  enseignantId String
+  isLive      Boolean   @default(false)
+  isActive    Boolean   @default(true)
+  duration    Int?
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("medias")
+}
+
+model MediaView {
+  id        String   @id @default(cuid())
+  mediaId   String
+  userId    String
+  viewedAt  DateTime @default(now())
+
+  @@map("mediaViews")
+}
+
+model CodeFile {
+  id           String   @id @default(cuid())
+  name         String
+  path         String
+  content      String
+  language     String?
+  ownerId      String?
+  classeId     String?
+  isFolder     Boolean  @default(false)
+  parentPath   String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("codeFiles")
+}
+
+model Language {
+  id       String    @id @default(cuid())
+  label    String
+  code     String    @unique
+  codings  Coding[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("languages")
+}
+
+model NoteExercice {
+  id         String   @id @default(cuid())
+  exerciceId String
+  eleveId    String
+  note       String?
+  fait       Boolean  @default(false)
+  reponse    String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("notesexercice")
+  @@unique([exerciceId, eleveId])
+}
+
+model SuiviRepartition {
+  id            String   @id @default(cuid())
+  repartitionId String
+  eleveId       String
+  note          String?
+  fait          Boolean  @default(false)
+  reponse       String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("suivis_repartition")
+  @@unique([repartitionId, eleveId])
+}
+
+model Coding {
+  id           String   @id @default(cuid())
+  languageId   String
+  language     Language @relation(fields: [languageId], references: [id], onDelete: Cascade)
+  name         String?
+  type         String   @default("code")
+  element      String
+  explication  String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@map("codings")
+}
