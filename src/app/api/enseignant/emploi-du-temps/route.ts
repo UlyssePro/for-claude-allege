@@ -65,13 +65,6 @@ export async function GET(request: NextRequest) {
     let ownEntries: any[] = [];
     let otherEntries: any[] = [];
 
-    console.log("DEBUG EDT:", {
-      userSessionId: session.user.sessionId || enseignant.sessionId,
-      enseignantId: enseignant.id,
-      ownFiltered,
-      otherFiltered,
-    });
-
     try {
       const [resOwn, resOther] = await Promise.all([
         prisma.grilleEmploiTemps.findMany({
@@ -115,14 +108,8 @@ export async function GET(request: NextRequest) {
       ]);
       ownEntries = resOwn;
       otherEntries = resOther;
-      console.log("DEBUG EDT RESULTS:", {
-        ownCount: ownEntries.length,
-        otherCount: otherEntries.length,
-        ownEntries: ownEntries.map((e) => ({ id: e.id, position: e.position, jour: e.jour, classeId: e.classeId })),
-        otherEntries: otherEntries.map((e) => ({ id: e.id, position: e.position, jour: e.jour, classeId: e.classeId })),
-      });
     } catch (error) {
-      console.error("DEBUG EDT ERROR:", error);
+      console.error("EDT query error:", error);
     }
 
     if (ownEntries.length === 0 && otherEntries.length === 0) {
@@ -200,11 +187,6 @@ export async function GET(request: NextRequest) {
         );
       }
     }
-
-    console.log("DEBUG EDT AFTER FALLBACK:", {
-      ownEntriesLength: ownEntries.length,
-      otherEntriesLength: otherEntries.length,
-    });
 
     const merged = new Map<string, any>();
 
@@ -303,7 +285,7 @@ export async function POST(request: NextRequest) {
 
     const existing = await prisma.grilleEmploiTemps.findMany({
       where: { enseignantId: enseignant.id, annee },
-      select: { id: true, position: true, jour: true },
+      select: { id: true, position: true, jour: true, date: true },
     });
 
     const normalizedExisting = existing

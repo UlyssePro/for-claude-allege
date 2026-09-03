@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import {
-  CardHeader,
-  Button,
-  Input,
-  Badge
-} from "@/components/ui";
+import { CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
 import {
   FileCode2,
   FolderOpen,
@@ -65,7 +63,7 @@ interface EditorToolbarProps {
   isFullscreen: boolean;
   setIsFullscreen: (fullscreen: boolean) => void;
   showCodingModal: boolean;
-  setShowCodingModal: (show: boolean) => 0;
+  setShowCodingModal: (show: boolean) => void;
   saveStatus: "saved" | "saving" | "unsaved";
   setSaveStatus: (status: "saved" | "saving" | "unsaved") => void;
   selectedFile: {
@@ -257,7 +255,7 @@ export function EditorToolbar(props: EditorToolbarProps) {
               size="sm"
               variant="outline"
               className="h-8 w-8 p-0"
-              onClick={() => setIsFullscreen((prev) => !prev)}
+              onClick={() => setIsFullscreen(!isFullscreen)}
               title={isFullscreen ? "Quitter le plein écran" : "Plein écran"}
             >
               {isFullscreen ? (

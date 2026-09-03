@@ -65,7 +65,7 @@ export async function GET(request: NextRequest) {
       },
     });
 
-    const uniqueClasseIds = Array.from(new Set(entries.map((e) => e.classeId).filter(Boolean)));
+    const uniqueClasseIds = Array.from(new Set(entries.map((e) => e.classeId).filter((id): id is string => Boolean(id))));
 
     const classes = await prisma.classe.findMany({
       where: {
@@ -86,7 +86,7 @@ export async function GET(request: NextRequest) {
     const classesList = classes.map((c) => ({
       id: c.id,
       label: c.label,
-      elevesCount: c._count.eleves || 0,
+      elevesCount: (c as any)._count?.eleves || 0,
     }));
 
     return NextResponse.json({ classes: classesList });

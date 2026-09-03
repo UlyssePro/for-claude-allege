@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Chemin requis" }, { status: 400 });
     }
 
-    const file = await prisma.codeFile.findUnique({
+    const file = await prisma.codeFile.findFirst({
       where: { path },
       select: { content: true, name: true, path: true },
     });
@@ -57,7 +57,7 @@ export async function GET(request: NextRequest) {
         const cssPath = resolveLocalPath(path, href);
         if (!cssPath || cssReplacements.has(match[0])) continue;
 
-        const cssFile = await prisma.codeFile.findUnique({
+        const cssFile = await prisma.codeFile.findFirst({
           where: { path: cssPath },
           select: { content: true },
         });
@@ -75,7 +75,7 @@ export async function GET(request: NextRequest) {
         const jsPath = resolveLocalPath(path, src);
         if (!jsPath || scriptReplacements.has(match[0])) continue;
 
-        const jsFile = await prisma.codeFile.findUnique({
+        const jsFile = await prisma.codeFile.findFirst({
           where: { path: jsPath },
           select: { content: true },
         });

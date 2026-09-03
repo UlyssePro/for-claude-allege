@@ -80,7 +80,7 @@ export async function GET(request: NextRequest) {
     });
 
     const trimestreIds = Array.from(
-      new Set(repartitions.map((r) => r.trimestreId).filter(Boolean)),
+      new Set(repartitions.map((r) => r.trimestreId).filter((id): id is string => Boolean(id))),
     );
 
     const cahiers = trimestreIds.length

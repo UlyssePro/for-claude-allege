@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -33,6 +33,18 @@ export default function EleveMediasPage() {
   const [connected, setConnected] = useState(false);
   const [usualClasseId, setUsualClasseId] = useState<string>("");
   const socketRef = useRef<Socket | null>(null);
+
+  const fetchMediaFiles = useCallback(async () => {
+    try {
+      const res = await fetch("/api/fs-medias");
+      const data = await res.json();
+      if (Array.isArray(data.mediaFiles)) {
+        setMediaFiles(data.mediaFiles);
+      }
+    } catch {
+      // ignore
+    }
+  }, []);
 
   useEffect(() => {
     const getSocketUrl = () => {
@@ -76,7 +88,7 @@ export default function EleveMediasPage() {
       socket.disconnect();
       socketRef.current = null;
     };
-  }, []);
+  }, [fetchMediaFiles]);
 
   useEffect(() => {
     const loadClasse = async () => {
@@ -102,20 +114,8 @@ export default function EleveMediasPage() {
   }, []);
 
   useEffect(() => {
-    const fetchMediaFiles = async () => {
-      try {
-        const res = await fetch("/api/fs-medias");
-        const data = await res.json();
-        if (Array.isArray(data.mediaFiles)) {
-          setMediaFiles(data.mediaFiles);
-        }
-      } catch {
-        // ignore
-      }
-    };
-
     fetchMediaFiles();
-  }, []);
+  }, [fetchMediaFiles]);
 
   const filteredMediaFiles = useMemo(() => {
     return mediaFiles.filter((media) => {

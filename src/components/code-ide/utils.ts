@@ -1,4 +1,4 @@
-import { FileNode } from './code-ide';
+import { FileNode } from './FileExplorer';
 
 // Language maps for display and Monaco
 export const LANGUAGE_MAP: Record<string, string> = {

@@ -2,14 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
-import { createSession, getUserRole, normalizeRole } from "@/lib/auth.actions";
-
-// bcrypt.hashSync('a', 10)
+import { createSession, getUserRole } from "@/lib/auth.actions";
 
 export async function POST(request: NextRequest) {
   try {
     const { role, nom, password, eleveId, sessionId } = await request.json();
-    console.log("LOGIN ATTEMPT:", { role, nom, hasPassword: !!password, sessionId });
 
     if (role !== "admin" && !sessionId) {
       return NextResponse.json(
@@ -127,7 +124,6 @@ export async function POST(request: NextRequest) {
       orderBy: { id: "asc" },
       include: { role: true, enseignantsGeres: true, elevesHandled: true },
     });
-    console.log("USER FOUND:", !!user, user?.username);
 
     if (!user) {
       return NextResponse.json(
@@ -137,7 +133,6 @@ export async function POST(request: NextRequest) {
     }
 
     const isValid = await bcrypt.compare(password, user.password);
-    console.log("PASSWORD VALID:", isValid);
     if (!isValid) {
       return NextResponse.json(
         { error: "Nom ou mot de passe incorrect." },

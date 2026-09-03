@@ -75,7 +75,7 @@ export async function GET(request: NextRequest) {
     };
     if (matiereId) where.matiereId = matiereId;
 
-    const [repartitions, horaires] = await Promise.all([
+    const [repartitions] = await Promise.all([
       prisma.repartition.findMany({
         where,
         select: {
@@ -98,19 +98,14 @@ export async function GET(request: NextRequest) {
           matiere: { select: { label: true, abrev: true } },
           classe: { select: { label: true } },
           lieuEcole: { select: { label: true } },
-          horaire: { select: { id: true, hour: true } },
         },
         orderBy: [{ date: "asc" }, { position: "asc" }],
-      }),
-      prisma.horaire.findMany({
-        select: { id: true, hour: true },
-        orderBy: { position: "asc" },
       }),
     ]);
 
     return NextResponse.json({
       repartitions,
-      horaires,
+      horaires: [],
       matiere,
       enseignant: {
         id: enseignant.id,

@@ -16,7 +16,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import bcrypt from "bcryptjs";
 
 type Role = "admin" | "prof" | "eleve";
 
@@ -68,8 +67,6 @@ export default function LoginPage() {
     setClasses([]);
     setSelectedUserId("");
   };
-
-  console.log(bcrypt.hashSync("a", 10));
 
   useEffect(() => {
     fetch("/api/public/sessions")

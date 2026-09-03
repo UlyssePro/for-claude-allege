@@ -135,7 +135,7 @@ const iconMap: Record<string, any> = {
   ".webp": FileCode2,
 };
 
-interface FileNode {
+export interface FileNode {
   name: string;
   path: string;
   type: "file" | "folder";

@@ -21,7 +21,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Chemin requis" }, { status: 400 });
     }
 
-    const file = await prisma.codeFile.findUnique({
+    const file = await prisma.codeFile.findFirst({
       where: { path },
       select: {
         content: true,
