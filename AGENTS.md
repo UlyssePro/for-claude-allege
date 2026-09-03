@@ -1,5 +1,14 @@
 # HMS-GS — Agent Guidelines
 
+## Base44 dev environment
+- Run: `docker compose -f docker-compose.base44.yml up -d` (web on port 3000, socket.io on port 3001)
+- Image: `node:22-slim`, source bind-mounted at `/app`; `node_modules` and `.next` in named volumes
+- `npm install --ignore-scripts` at startup (generated Prisma client is committed, so `prisma generate` is optional)
+- Dev command runs `next dev --turbopack --hostname 0.0.0.0` + `tsx src/socket-server.ts` via concurrently
+- `next.config.ts` has `allowedDevOrigins` derived from `BASE44_PUBLIC_HOST_SUFFIX` so the preview proxy origin is accepted
+- No external secrets needed — SQLite (`dev.db`) is local and committed; `AUTH_SECRET` is a dev placeholder in `.env.base44-defaults`
+- Login: `admin` / `admin123`
+
 ## Stack
 - **Next.js 16** (App Router, Turbopack) + TypeScript + Tailwind
 - **Prisma 7** client via `@prisma/adapter-libsql` (SQLite local: `file:./dev.db`)
