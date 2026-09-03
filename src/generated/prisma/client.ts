@@ -201,3 +201,38 @@ export type SuiviRepartition = Prisma.SuiviRepartitionModel
  * 
  */
 export type Coding = Prisma.CodingModel
+/**
+ * Model SchoolYear
+ * 
+ */
+export type SchoolYear = Prisma.SchoolYearModel
+/**
+ * Model Period
+ * 
+ */
+export type Period = Prisma.PeriodModel
+/**
+ * Model ClassLevel
+ * 
+ */
+export type ClassLevel = Prisma.ClassLevelModel
+/**
+ * Model Curriculum
+ * 
+ */
+export type Curriculum = Prisma.CurriculumModel
+/**
+ * Model Module
+ * 
+ */
+export type Module = Prisma.ModuleModel
+/**
+ * Model Chapter
+ * 
+ */
+export type Chapter = Prisma.ChapterModel
+/**
+ * Model Lesson
+ * 
+ */
+export type Lesson = Prisma.LessonModel

@@ -82,7 +82,14 @@ export const ModelName = {
   Language: 'Language',
   NoteExercice: 'NoteExercice',
   SuiviRepartition: 'SuiviRepartition',
-  Coding: 'Coding'
+  Coding: 'Coding',
+  SchoolYear: 'SchoolYear',
+  Period: 'Period',
+  ClassLevel: 'ClassLevel',
+  Curriculum: 'Curriculum',
+  Module: 'Module',
+  Chapter: 'Chapter',
+  Lesson: 'Lesson'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -561,6 +568,86 @@ export const CodingScalarFieldEnum = {
 } as const
 
 export type CodingScalarFieldEnum = (typeof CodingScalarFieldEnum)[keyof typeof CodingScalarFieldEnum]
+
+
+export const SchoolYearScalarFieldEnum = {
+  id: 'id',
+  label: 'label',
+  startDate: 'startDate',
+  endDate: 'endDate',
+  description: 'description'
+} as const
+
+export type SchoolYearScalarFieldEnum = (typeof SchoolYearScalarFieldEnum)[keyof typeof SchoolYearScalarFieldEnum]
+
+
+export const PeriodScalarFieldEnum = {
+  id: 'id',
+  schoolYearId: 'schoolYearId',
+  code: 'code',
+  name: 'name',
+  startDate: 'startDate',
+  endDate: 'endDate',
+  order: 'order',
+  description: 'description'
+} as const
+
+export type PeriodScalarFieldEnum = (typeof PeriodScalarFieldEnum)[keyof typeof PeriodScalarFieldEnum]
+
+
+export const ClassLevelScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  name: 'name',
+  cycle: 'cycle'
+} as const
+
+export type ClassLevelScalarFieldEnum = (typeof ClassLevelScalarFieldEnum)[keyof typeof ClassLevelScalarFieldEnum]
+
+
+export const CurriculumScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  objective: 'objective',
+  status: 'status',
+  schoolYearId: 'schoolYearId',
+  classLevelId: 'classLevelId',
+  periodId: 'periodId'
+} as const
+
+export type CurriculumScalarFieldEnum = (typeof CurriculumScalarFieldEnum)[keyof typeof CurriculumScalarFieldEnum]
+
+
+export const ModuleScalarFieldEnum = {
+  id: 'id',
+  curriculumId: 'curriculumId',
+  code: 'code',
+  title: 'title',
+  order: 'order'
+} as const
+
+export type ModuleScalarFieldEnum = (typeof ModuleScalarFieldEnum)[keyof typeof ModuleScalarFieldEnum]
+
+
+export const ChapterScalarFieldEnum = {
+  id: 'id',
+  moduleId: 'moduleId',
+  title: 'title',
+  order: 'order'
+} as const
+
+export type ChapterScalarFieldEnum = (typeof ChapterScalarFieldEnum)[keyof typeof ChapterScalarFieldEnum]
+
+
+export const LessonScalarFieldEnum = {
+  id: 'id',
+  chapterId: 'chapterId',
+  title: 'title',
+  order: 'order',
+  type: 'type'
+} as const
+
+export type LessonScalarFieldEnum = (typeof LessonScalarFieldEnum)[keyof typeof LessonScalarFieldEnum]
 
 
 export const SortOrder = {

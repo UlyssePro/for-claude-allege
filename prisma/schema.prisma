@@ -574,3 +574,105 @@ model Coding {
 
   @@map("codings")
 }
+
+// ----------------------------------------------------------------------------
+// PROGRAMMES PÉDAGOGIQUES (curriculum)
+// ----------------------------------------------------------------------------
+
+model SchoolYear {
+  id          String   @id @default(cuid())
+  label       String   @unique
+  startDate   DateTime
+  endDate     DateTime
+  description String?
+
+  periods   Period[]
+  curricula Curriculum[]
+
+  @@map("school_years")
+}
+
+model Period {
+  id           String     @id @default(cuid())
+  schoolYearId String
+  schoolYear   SchoolYear @relation(fields: [schoolYearId], references: [id], onDelete: Cascade)
+  code         String
+  name         String
+  startDate    DateTime
+  endDate      DateTime
+  order        Int
+  description  String?
+
+  curricula Curriculum[]
+
+  @@unique([schoolYearId, code])
+  @@map("periods")
+}
+
+model ClassLevel {
+  id    String @id @default(cuid())
+  code  String @unique
+  name  String
+  cycle String?
+
+  curricula Curriculum[]
+
+  @@map("class_levels")
+}
+
+model Curriculum {
+  id           String     @id @default(cuid())
+  title        String
+  objective    String?
+  status       String     @default("DRAFT")
+  schoolYearId String
+  schoolYear   SchoolYear @relation(fields: [schoolYearId], references: [id])
+  classLevelId String
+  classLevel   ClassLevel @relation(fields: [classLevelId], references: [id])
+  periodId     String
+  period       Period     @relation(fields: [periodId], references: [id])
+
+  modules Module[]
+
+  @@unique([schoolYearId, classLevelId, periodId])
+  @@map("curricula")
+}
+
+model Module {
+  id           String     @id @default(cuid())
+  curriculumId String
+  curriculum   Curriculum @relation(fields: [curriculumId], references: [id], onDelete: Cascade)
+  code         String
+  title        String
+  order        Int
+
+  chapters Chapter[]
+
+  @@unique([curriculumId, order])
+  @@map("modules")
+}
+
+model Chapter {
+  id       String @id @default(cuid())
+  moduleId String
+  module   Module @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  title    String
+  order    Int
+
+  lessons Lesson[]
+
+  @@unique([moduleId, order])
+  @@map("chapters")
+}
+
+model Lesson {
+  id        String @id @default(cuid())
+  chapterId String
+  chapter   Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  title     String
+  order     Int
+  type      String @default("COURSE")
+
+  @@unique([chapterId, order])
+  @@map("lessons")
+}
