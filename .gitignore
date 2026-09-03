@@ -6,3 +6,4 @@
 /dev.db.backup2
 /for-claude.zip
 /node_modules
+.env
